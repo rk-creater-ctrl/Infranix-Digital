@@ -27,12 +27,13 @@
       const hasOrder = links.some((link) => (link.getAttribute("href") || "").includes("order.html"));
       const contactLink = links.find((link) => (link.getAttribute("href") || "").includes("contact.html"));
       const insertBefore = contactLink || null;
+      const baseClassName = (contactLink?.className || "menu-item").replace(/\bactive\b/g, "").trim() || "menu-item";
 
       if (!hasPricing) {
         const pricing = document.createElement("a");
         pricing.href = "pricing.html";
         pricing.textContent = "Pricing";
-        pricing.className = contactLink ? contactLink.className : "menu-item";
+        pricing.className = baseClassName;
         menu.insertBefore(pricing, insertBefore);
       }
 
@@ -40,7 +41,7 @@
         const order = document.createElement("a");
         order.href = "order.html";
         order.textContent = "Order";
-        order.className = contactLink ? contactLink.className : "menu-item";
+        order.className = baseClassName;
         menu.insertBefore(order, insertBefore);
       }
     });
@@ -83,6 +84,10 @@
 
       const serviceColumn = makeFooterColumn("footer-links footer-service-links", "Services", [
         { href: "services.html", label: "Services" },
+        { href: "school-website.html", label: "School Website" },
+        { href: "school-management-system.html", label: "School Management" },
+        { href: "website-erp-software.html", label: "Website + ERP" },
+        { href: "website-maintenance.html", label: "Maintenance" },
         { href: "pricing.html", label: "Pricing" },
         { href: "order.html", label: "Order" }
       ]);
@@ -327,9 +332,20 @@
 
   function activateCurrentNav() {
     const currentPage = window.location.pathname.split("/").pop() || "index.html";
+    const serviceDetailPages = [
+      "school-website.html",
+      "school-management-system.html",
+      "website-erp-software.html",
+      "website-maintenance.html",
+      "ai-chatbot.html",
+      "python-software.html"
+    ];
+    const activePage = serviceDetailPages.includes(currentPage) ? "services.html" : currentPage;
+
     document.querySelectorAll(".menu a").forEach((link) => {
       const linkPage = (link.getAttribute("href") || "").split("/").pop();
-      if (linkPage === currentPage) {
+      link.classList.remove("active");
+      if (linkPage === activePage) {
         link.classList.add("active");
       }
     });
