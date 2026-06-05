@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing | CodeNexus</title>
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    color:#fff;
+}
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(0,0,0,0.85);
+    backdrop-filter:blur(10px);
+}
+
+.menu{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:25px;
+    padding:15px;
+}
+
+.menu img{height:60px;}
+
+.menu a{
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
+    position:relative;
+}
+
+.menu a::after{
+    content:"";
+    position:absolute;
+    width:0;
+    height:2px;
+    background:#00e5ff;
+    left:0;
+    bottom:-5px;
+    transition:.3s;
+}
+
+.menu a:hover::after{width:100%;}
+
+.page-hero{
+    padding:90px 20px 36px;
+    text-align:center;
+}
+
+.page-hero h1{
+    font-size:2.8rem;
+    color:#00e5ff;
+}
+
+.page-hero p{
+    max-width:780px;
+    margin:14px auto 0;
+    opacity:.9;
+}
+
+.footer{
+    background:#000;
+    padding:50px 20px 20px;
+}
+
+.footer-container{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+}
+
+.footer-logo{width:70px;}
+.footer h3{color:#00e5ff;}
+
+.footer a{
+    color:#ccc;
+    text-decoration:none;
+}
+
+.footer a:hover{color:#00e5ff;}
+
+.social-icons a{
+    font-size:20px;
+    margin-right:12px;
+}
+
+.footer-bottom{
+    text-align:center;
+    margin-top:30px;
+    border-top:1px solid #333;
+    padding-top:15px;
+    font-size:13px;
+}
+</style>
+<link rel="stylesheet" href="codenexus-modern.css">
+</head>
+
+<body>
+<header>
+<nav class="menu">
+<img src="logo.png" alt="CodeNexus">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="services.html">Services</a>
+<a href="projects.html">Projects</a>
+<a href="pricing.html">Pricing</a>
+<a href="order.html">Order</a>
+<a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<section class="page-hero">
+<h1>Service Packages</h1>
+<p>Choose a starting package for your website, software, AI, Python, or robotics project. Final scope and timeline are confirmed after discussing your requirements.</p>
+</section>
+
+<section class="pricing-section">
+<div class="packages-grid">
+
+<div class="package-card">
+<span class="package-badge">Starter</span>
+<h3>Business Website</h3>
+<div class="package-price">Starting Rs. 2,999</div>
+<p class="package-meta">Delivery: 3-5 days | Revisions: 2</p>
+<ul class="feature-list">
+<li>Responsive landing page or small website</li>
+<li>Home, about, services, and contact sections</li>
+<li>WhatsApp and social links</li>
+<li>Basic SEO setup</li>
+</ul>
+<div class="package-actions">
+<a href="https://wa.me/916266324835" class="btn" data-order-service="Business Website">Order on WhatsApp</a>
+<a href="projects.html" class="outline-btn">View Work</a>
+</div>
+</div>
+
+<div class="package-card featured-package">
+<span class="package-badge">Popular</span>
+<h3>School Website</h3>
+<div class="package-price">Starting Rs. 5,999</div>
+<p class="package-meta">Delivery: 5-7 days | Revisions: 3</p>
+<ul class="feature-list">
+<li>Admission, notices, gallery, academics, and contact pages</li>
+<li>Mobile-friendly design for parents and students</li>
+<li>Google Maps and WhatsApp inquiry links</li>
+<li>Live GitHub Pages deployment support</li>
+</ul>
+<div class="package-actions">
+<a href="https://wa.me/916266324835" class="btn" data-order-service="School Website">Order on WhatsApp</a>
+<a href="https://savvymotherschool.github.io/Savvy-Mother-Toddler/index.html" class="outline-btn" target="_blank" rel="noopener">View Demo</a>
+</div>
+</div>
+
+<div class="package-card featured-package">
+<span class="package-badge">Software</span>
+<h3>School Management System</h3>
+<div class="package-price">Starting Rs. 14,999</div>
+<p class="package-meta">Delivery: 10-18 days | Revisions: 3</p>
+<ul class="feature-list">
+<li>Student, staff, class, and attendance management</li>
+<li>Marksheets, reports, and record handling</li>
+<li>Admin-friendly screens and workflows</li>
+<li>Custom modules based on school needs</li>
+</ul>
+<div class="package-actions">
+<a href="https://wa.me/916266324835" class="btn" data-order-service="School Management System">Order on WhatsApp</a>
+<a href="order.html" class="outline-btn">Get Quote</a>
+</div>
+</div>
+
+<div class="package-card">
+<span class="package-badge">AI</span>
+<h3>AI Chatbot</h3>
+<div class="package-price">Starting Rs. 7,999</div>
+<p class="package-meta">Delivery: 7-12 days | Revisions: 2</p>
+<ul class="feature-list">
+<li>Website chatbot or assistant workflow</li>
+<li>FAQ, lead capture, or support use cases</li>
+<li>Basic training from your content</li>
+<li>Integration guidance for your site</li>
+</ul>
+<div class="package-actions">
+<a href="https://wa.me/916266324835" class="btn" data-order-service="AI Chatbot">Order on WhatsApp</a>
+<a href="AI.html" class="outline-btn">Learn More</a>
+</div>
+</div>
+
+<div class="package-card">
+<span class="package-badge">Python</span>
+<h3>Custom Python Software</h3>
+<div class="package-price">Starting Rs. 4,999</div>
+<p class="package-meta">Delivery: 5-10 days | Revisions: 2</p>
+<ul class="feature-list">
+<li>Automation scripts and desktop utilities</li>
+<li>PDF, QR, marksheet, and reporting tools</li>
+<li>Data handling and workflow automation</li>
+<li>Simple UI or command-line tools</li>
+</ul>
+<div class="package-actions">
+<a href="https://wa.me/916266324835" class="btn" data-order-service="Custom Python Software">Order on WhatsApp</a>
+<a href="pyhton.html" class="outline-btn">Learn More</a>
+</div>
+</div>
+
+<div class="package-card">
+<span class="package-badge">Hardware</span>
+<h3>Robotics & IoT Project</h3>
+<div class="package-price">Starting Rs. 3,999</div>
+<p class="package-meta">Delivery: 7-14 days | Revisions: 2</p>
+<ul class="feature-list">
+<li>Arduino, sensors, motors, and automation support</li>
+<li>Prototype planning and wiring guidance</li>
+<li>Project documentation and demo preparation</li>
+<li>Custom build discussion on request</li>
+</ul>
+<div class="package-actions">
+<a href="https://wa.me/916266324835" class="btn" data-order-service="Robotics and IoT Project">Order on WhatsApp</a>
+<a href="Robotics.html" class="outline-btn">Learn More</a>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="process-section">
+<div class="section-heading">
+<h2>How Orders Work</h2>
+<p>Simple project flow for static websites, software tools, school systems, and custom automation.</p>
+</div>
+<div class="process-grid">
+<div class="process-card">
+<h3>1. Share Requirement</h3>
+<ul>
+<li>Tell us your service type, deadline, and budget</li>
+<li>Send screenshots, references, or feature list</li>
+</ul>
+</div>
+<div class="process-card">
+<h3>2. Confirm Scope</h3>
+<ul>
+<li>We confirm pages, features, content, and timeline</li>
+<li>You receive a clear project plan before work starts</li>
+</ul>
+</div>
+<div class="process-card">
+<h3>3. Build & Review</h3>
+<ul>
+<li>Design, development, testing, and revisions</li>
+<li>Updates are shared during the project</li>
+</ul>
+</div>
+<div class="process-card">
+<h3>4. Deliver</h3>
+<ul>
+<li>Final files, live site link, or software package</li>
+<li>Basic handover support after delivery</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section class="trust-section">
+<div class="section-heading">
+<h2>Why Clients Can Trust CodeNexus</h2>
+<p>Real projects, practical delivery, and direct communication from requirement to launch.</p>
+</div>
+<div class="trust-grid">
+<div class="trust-card">
+<h3>Live Demos</h3>
+<ul>
+<li>School website, tech hub, automobile site, and import-export site demos</li>
+<li>Project screenshots available in the portfolio</li>
+</ul>
+</div>
+<div class="trust-card">
+<h3>Custom Work</h3>
+<ul>
+<li>Websites, Python apps, AI tools, and school software</li>
+<li>Features built around each client's requirement</li>
+</ul>
+</div>
+<div class="trust-card">
+<h3>Direct Support</h3>
+<ul>
+<li>WhatsApp-first communication</li>
+<li>Clear scope, timeline, and delivery updates</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section class="project-cta">
+<div class="quote-card">
+<div class="section-heading">
+<h2>Need a Custom Quote?</h2>
+<p>Share your project details and get a clear estimate for your website, software, or automation idea.</p>
+</div>
+<div class="cta-actions">
+<a href="order.html" class="btn">Request Quote</a>
+<a href="projects.html" class="outline-btn">View Projects</a>
+</div>
+</div>
+</section>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-about">
+            <img src="logo.png" alt="CodeNexus Logo" class="footer-logo">
+            <p>
+                CodeNexus is a technology-driven freelance brand founded by
+                <strong>Ritik Kushwaha</strong>, delivering innovative solutions
+                in Web Development, AI, Robotics, and Python Programming.
+            </p>
+        </div>
+
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="order.html">Order</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-contact">
+            <h3>Contact</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Rewa, Madhya Pradesh, India</p>
+            <p><i class="fas fa-phone"></i> +91 6266324835</p>
+            <p><i class="fas fa-envelope"></i> ritikkushwaha3893@gmail.com</p>
+        </div>
+
+        <div class="footer-social">
+            <h3>Follow Me</h3>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/ritik-kushwaha-bb76a0355/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/rk-creater-ctrl" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://x.com/_CodeNexus" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/_.ritik_25" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/916266324835" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        &copy; <span id="year"></span> CodeNexus. All Rights Reserved.<br>
+        Designed & Developed by <strong>Ritik Kushwaha</strong>
+    </div>
+</footer>
+
+<script>
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+<script src="codenexus-modern.js"></script>
+</body>
+</html>

@@ -1,11 +1,273 @@
 (function () {
+  const whatsappNumber = "916266324835";
+
   const fallbackLinks = {
     x: "https://x.com/_CodeNexus",
     instagram: "https://www.instagram.com/_.ritik_25",
-    whatsapp: "https://wa.me/+916266324835"
+    whatsapp: `https://wa.me/${whatsappNumber}`
   };
 
+  const importantPages = [
+    { href: "privacy-policy.html", label: "Privacy Policy", icon: "fa-user-shield" },
+    { href: "terms-and-conditions.html", label: "Terms and Conditions", icon: "fa-file-contract" },
+    { href: "service-policy.html", label: "Service Policy", icon: "fa-clipboard-list" },
+    { href: "disclaimer.html", label: "Disclaimer", icon: "fa-exclamation-circle" }
+  ];
+
   const footerLinks = Array.from(document.querySelectorAll(".footer a, footer a"));
+
+  function buildWhatsappUrl(message) {
+    return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+  }
+
+  function ensureSellingNavLinks() {
+    document.querySelectorAll("header .menu").forEach((menu) => {
+      const links = Array.from(menu.querySelectorAll(":scope > a"));
+      const hasPricing = links.some((link) => (link.getAttribute("href") || "").includes("pricing.html"));
+      const hasOrder = links.some((link) => (link.getAttribute("href") || "").includes("order.html"));
+      const contactLink = links.find((link) => (link.getAttribute("href") || "").includes("contact.html"));
+      const insertBefore = contactLink || null;
+
+      if (!hasPricing) {
+        const pricing = document.createElement("a");
+        pricing.href = "pricing.html";
+        pricing.textContent = "Pricing";
+        pricing.className = contactLink ? contactLink.className : "menu-item";
+        menu.insertBefore(pricing, insertBefore);
+      }
+
+      if (!hasOrder) {
+        const order = document.createElement("a");
+        order.href = "order.html";
+        order.textContent = "Order";
+        order.className = contactLink ? contactLink.className : "menu-item";
+        menu.insertBefore(order, insertBefore);
+      }
+    });
+  }
+
+  function ensureFooterSellingLinks() {
+    buildCategorizedFooter();
+  }
+
+  function ensureFooterImportantLinks() {
+    buildCategorizedFooter();
+  }
+
+  function makeFooterColumn(className, title, links) {
+    const column = document.createElement("div");
+    column.className = className;
+    const list = links.map((link) => `<li><a href="${link.href}">${link.label}</a></li>`).join("");
+    column.innerHTML = `<h3>${title}</h3><ul>${list}</ul>`;
+    return column;
+  }
+
+  function buildCategorizedFooter() {
+    document.querySelectorAll(".footer-container").forEach((container) => {
+      if (container.dataset.categorized === "true") {
+        return;
+      }
+
+      const existingLinksColumn = container.querySelector(".footer-links");
+      const contactColumn = container.querySelector(".footer-contact");
+      const socialColumn = container.querySelector(".footer-social");
+
+      existingLinksColumn?.remove();
+
+      const quickColumn = makeFooterColumn("footer-links footer-nav-links", "Quick Links", [
+        { href: "index.html", label: "Home" },
+        { href: "about.html", label: "About" },
+        { href: "projects.html", label: "Projects" },
+        { href: "contact.html", label: "Contact" }
+      ]);
+
+      const serviceColumn = makeFooterColumn("footer-links footer-service-links", "Services", [
+        { href: "services.html", label: "Services" },
+        { href: "pricing.html", label: "Pricing" },
+        { href: "order.html", label: "Order" }
+      ]);
+
+      const policyColumn = makeFooterColumn("footer-links footer-policy-links", "Policies", importantPages);
+
+      if (contactColumn) {
+        container.insertBefore(quickColumn, contactColumn);
+        container.insertBefore(serviceColumn, contactColumn);
+        container.insertBefore(policyColumn, contactColumn);
+      } else if (socialColumn) {
+        container.insertBefore(quickColumn, socialColumn);
+        container.insertBefore(serviceColumn, socialColumn);
+        container.insertBefore(policyColumn, socialColumn);
+      } else {
+        container.appendChild(quickColumn);
+        container.appendChild(serviceColumn);
+        container.appendChild(policyColumn);
+      }
+
+      container.dataset.categorized = "true";
+    });
+  }
+
+  function buildImportantPagesMenu(navLinks, mobileToggle) {
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+    const isPolicyPage = importantPages.some((page) => page.href === currentPage);
+
+    const menu = document.createElement("div");
+    menu.className = `cn-legal-menu${isPolicyPage ? " active" : ""}`;
+
+    const button = document.createElement("button");
+    button.className = "cn-legal-toggle";
+    button.type = "button";
+    button.setAttribute("aria-label", "Important pages");
+    button.setAttribute("aria-haspopup", "true");
+    button.setAttribute("aria-expanded", "false");
+    button.title = "Important pages";
+    button.innerHTML = '<i class="fas fa-file-alt" aria-hidden="true"></i><span class="cn-sr-only">Important pages</span>';
+
+    const dropdown = document.createElement("div");
+    dropdown.className = "cn-legal-dropdown";
+    dropdown.setAttribute("role", "menu");
+
+    importantPages.forEach((page) => {
+      const link = document.createElement("a");
+      link.href = page.href;
+      link.setAttribute("role", "menuitem");
+      link.innerHTML = `<i class="fas ${page.icon}" aria-hidden="true"></i><span>${page.label}</span>`;
+      if (page.href === currentPage) {
+        link.classList.add("active");
+      }
+      dropdown.appendChild(link);
+    });
+
+    menu.appendChild(button);
+    menu.appendChild(dropdown);
+
+    button.addEventListener("click", (event) => {
+      event.stopPropagation();
+      closeOpenDropdowns(navLinks, menu);
+      const isOpen = menu.classList.toggle("open");
+      button.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    dropdown.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        menu.classList.remove("open");
+        button.setAttribute("aria-expanded", "false");
+        navLinks.classList.remove("open");
+        mobileToggle.classList.remove("active");
+        mobileToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!menu.contains(event.target)) {
+        menu.classList.remove("open");
+        button.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    return menu;
+  }
+
+  function pageNameFromHref(href) {
+    return (href || "").split("/").pop() || "index.html";
+  }
+
+  function findNavLink(links, page) {
+    return links.find((link) => pageNameFromHref(link.getAttribute("href")) === page);
+  }
+
+  function closeOpenDropdowns(navLinks, exceptMenu) {
+    navLinks.querySelectorAll(".cn-nav-group.open, .cn-legal-menu.open").forEach((menu) => {
+      if (menu === exceptMenu) {
+        return;
+      }
+
+      menu.classList.remove("open");
+      menu.querySelector("button")?.setAttribute("aria-expanded", "false");
+    });
+  }
+
+  function buildNavGroup(label, groupLinks, currentPage, navLinks, mobileToggle) {
+    const availableLinks = groupLinks.filter(Boolean);
+    const isActive = availableLinks.some((link) => pageNameFromHref(link.getAttribute("href")) === currentPage);
+    const group = document.createElement("div");
+    group.className = `cn-nav-group${isActive ? " active" : ""}`;
+
+    const button = document.createElement("button");
+    button.className = "cn-nav-group-toggle";
+    button.type = "button";
+    button.setAttribute("aria-haspopup", "true");
+    button.setAttribute("aria-expanded", "false");
+    button.innerHTML = `<span>${label}</span><i class="fas fa-chevron-down" aria-hidden="true"></i>`;
+
+    const dropdown = document.createElement("div");
+    dropdown.className = "cn-nav-dropdown";
+    dropdown.setAttribute("role", "menu");
+
+    availableLinks.forEach((link) => {
+      link.classList.remove("nav-link");
+      link.setAttribute("role", "menuitem");
+      dropdown.appendChild(link);
+    });
+
+    group.appendChild(button);
+    group.appendChild(dropdown);
+
+    button.addEventListener("click", (event) => {
+      event.stopPropagation();
+      closeOpenDropdowns(navLinks, group);
+      const isOpen = group.classList.toggle("open");
+      button.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    dropdown.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        group.classList.remove("open");
+        button.setAttribute("aria-expanded", "false");
+        navLinks.classList.remove("open");
+        mobileToggle.classList.remove("active");
+        mobileToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!group.contains(event.target)) {
+        group.classList.remove("open");
+        button.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    return group;
+  }
+
+  function buildGroupedNavigation(navLinks, links, mobileToggle) {
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+    const homeLink = findNavLink(links, "index.html");
+    const projectLink = findNavLink(links, "projects.html");
+
+    if (homeLink) {
+      homeLink.classList.add("nav-link");
+      homeLink.textContent = "Home";
+      navLinks.appendChild(homeLink);
+    }
+
+    navLinks.appendChild(buildNavGroup("Services", [
+      findNavLink(links, "services.html"),
+      findNavLink(links, "pricing.html"),
+      findNavLink(links, "order.html")
+    ], currentPage, navLinks, mobileToggle));
+
+    if (projectLink) {
+      projectLink.classList.add("nav-link");
+      projectLink.textContent = "Work";
+      navLinks.appendChild(projectLink);
+    }
+
+    navLinks.appendChild(buildNavGroup("Company", [
+      findNavLink(links, "about.html"),
+      findNavLink(links, "contact.html")
+    ], currentPage, navLinks, mobileToggle));
+  }
 
   function findFooterLink(test, fallback) {
     const match = footerLinks.find((link) => {
@@ -111,11 +373,6 @@
       indicator.id = "navIndicator";
       navLinks.appendChild(indicator);
 
-      links.forEach((link) => {
-        link.classList.add("nav-link");
-        navLinks.appendChild(link);
-      });
-
       const toggle = document.createElement("button");
       toggle.className = "cn-menu-toggle";
       toggle.id = "menuToggle";
@@ -124,11 +381,17 @@
       toggle.setAttribute("aria-expanded", "false");
       toggle.innerHTML = "<span></span><span></span><span></span>";
 
+      links.forEach((link) => {
+        link.classList.add("nav-link");
+        navLinks.appendChild(link);
+      });
+      navLinks.appendChild(buildImportantPagesMenu(navLinks, toggle));
+
       menu.appendChild(navLinks);
       menu.appendChild(toggle);
 
       const moveIndicator = (targetLink) => {
-        if (!targetLink || window.innerWidth <= 860) {
+        if (!targetLink || window.innerWidth <= 1180) {
           indicator.style.opacity = 0;
           return;
         }
@@ -140,7 +403,9 @@
         indicator.style.opacity = 1;
       };
 
-      const currentActive = () => navLinks.querySelector(".nav-link.active") || navLinks.querySelector(".nav-link");
+      const currentActive = () => navLinks.querySelector(".nav-link.active")
+        || navLinks.querySelector(".cn-legal-menu.active .cn-legal-toggle")
+        || navLinks.querySelector(".nav-link");
 
       setTimeout(() => moveIndicator(currentActive()), 120);
 
@@ -154,12 +419,21 @@
         });
       });
 
+      navLinks.querySelectorAll(".cn-legal-toggle").forEach((button) => {
+        button.addEventListener("mouseenter", () => moveIndicator(button));
+        button.addEventListener("focus", () => moveIndicator(button));
+      });
+
       navLinks.addEventListener("mouseleave", () => moveIndicator(currentActive()));
 
       toggle.addEventListener("click", () => {
         const isOpen = navLinks.classList.toggle("open");
         toggle.classList.toggle("active", isOpen);
         toggle.setAttribute("aria-expanded", String(isOpen));
+        navLinks.querySelectorAll(".cn-legal-menu.open").forEach((menu) => {
+          menu.classList.remove("open");
+          menu.querySelector("button")?.setAttribute("aria-expanded", "false");
+        });
       });
 
       window.addEventListener("resize", () => moveIndicator(currentActive()));
@@ -167,7 +441,7 @@
   }
 
   function enhanceScrollAnimations() {
-    document.querySelectorAll(".page-hero, .container, .about-grid, .contact-container, .map-section").forEach((element) => {
+    document.querySelectorAll(".page-hero, .container, .about-grid, .contact-container, .map-section, .section-heading, .package-card, .process-card, .trust-card, .quote-card, .project-cta").forEach((element) => {
       element.classList.add("scroll-animate");
     });
 
@@ -195,8 +469,77 @@
     animated.forEach((element) => observer.observe(element));
   }
 
+  function getFieldLabel(field) {
+    if (field.dataset.label) {
+      return field.dataset.label;
+    }
+
+    const label = field.closest(".form-group")?.querySelector("label");
+    if (label && label.textContent.trim()) {
+      return label.textContent.trim();
+    }
+
+    return field.name.replace(/[-_]/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
+  }
+
+  function buildFormMessage(form) {
+    const title = form.dataset.formTitle || "Project Inquiry";
+    const lines = [`Hello CodeNexus, I want to discuss: ${title}`];
+    const fields = Array.from(form.querySelectorAll("input[name], select[name], textarea[name]"));
+
+    fields.forEach((field) => {
+      if (field.type === "hidden" || field.type === "submit") {
+        return;
+      }
+
+      const value = field.value.trim();
+      if (!value) {
+        return;
+      }
+
+      lines.push(`${getFieldLabel(field)}: ${value}`);
+    });
+
+    lines.push("Please contact me with details and next steps.");
+    return lines.join("\n");
+  }
+
+  function attachWhatsappForms() {
+    document.querySelectorAll("form[data-whatsapp-form]").forEach((form) => {
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+
+        const url = buildWhatsappUrl(buildFormMessage(form));
+        const status = form.querySelector(".form-status");
+        if (status) {
+          status.textContent = "Opening WhatsApp with your project details.";
+        }
+
+        const opened = window.open(url, "_blank", "noopener");
+        if (!opened) {
+          window.location.href = url;
+        }
+      });
+    });
+  }
+
+  function attachOrderButtons() {
+    document.querySelectorAll("[data-order-service]").forEach((button) => {
+      const service = button.dataset.orderService || "a CodeNexus service";
+      const message = `Hello CodeNexus, I want to order or discuss: ${service}\nPlease share package details and next steps.`;
+      button.setAttribute("href", buildWhatsappUrl(message));
+      button.setAttribute("target", "_blank");
+      button.setAttribute("rel", "noopener");
+    });
+  }
+
   function addCardTilt() {
-    const cards = document.querySelectorAll(".service-item, .project-card, .testimonial-item");
+    const cards = document.querySelectorAll(".service-item, .project-card, .testimonial-item, .package-card, .process-card, .trust-card");
 
     cards.forEach((card) => {
       card.addEventListener("pointermove", (event) => {
@@ -215,10 +558,15 @@
   }
 
   document.addEventListener("DOMContentLoaded", () => {
+    ensureSellingNavLinks();
+    ensureFooterSellingLinks();
+    ensureFooterImportantLinks();
     activateCurrentNav();
     enhanceSavvyNavbar();
     enhanceScrollAnimations();
     addCardTilt();
+    attachOrderButtons();
+    attachWhatsappForms();
     buildFloatingSocials();
   });
 })();
