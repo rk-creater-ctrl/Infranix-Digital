@@ -338,7 +338,10 @@
       "website-erp-software.html",
       "website-maintenance.html",
       "ai-chatbot.html",
-      "python-software.html"
+      "python-software.html",
+      "web_development.html",
+      "AI.html",
+      "Robotics.html"
     ];
     const activePage = serviceDetailPages.includes(currentPage) ? "services.html" : currentPage;
 
@@ -531,6 +534,7 @@
         }
 
         const url = buildWhatsappUrl(buildFormMessage(form));
+        trackConversion("form_submit", form.dataset.formTitle || "Project Inquiry");
         const status = form.querySelector(".form-status");
         if (status) {
           status.textContent = "Opening WhatsApp with your project details.";
@@ -551,6 +555,114 @@
       button.setAttribute("href", buildWhatsappUrl(message));
       button.setAttribute("target", "_blank");
       button.setAttribute("rel", "noopener");
+    });
+  }
+
+  function tagProject(title) {
+    const normalized = title.toLowerCase();
+    const tags = [];
+
+    if (/school|website|site|portal|portfolio|hub/.test(normalized)) {
+      tags.push("Website");
+    }
+
+    if (/system|generator|app|software|receipt|attendance|marksheet|dashboard/.test(normalized)) {
+      tags.push("Software");
+    }
+
+    if (/ai|chatbot|detector|watcher/.test(normalized)) {
+      tags.push("Automation");
+    }
+
+    if (/robot|robo|car|parking|arduino/.test(normalized)) {
+      tags.push("Prototype");
+    }
+
+    tags.push("Custom build");
+    return Array.from(new Set(tags)).slice(0, 3);
+  }
+
+  function professionalizePortfolioCards() {
+    document.querySelectorAll(".project-card").forEach((card) => {
+      card.querySelectorAll(".like-dislike").forEach((controls) => controls.remove());
+
+      const content = card.querySelector(".project-content");
+      if (!content || content.querySelector(".project-proof")) {
+        return;
+      }
+
+      const title = content.querySelector("h3")?.textContent?.trim() || "Project";
+      const proof = document.createElement("div");
+      proof.className = "project-proof";
+      proof.setAttribute("aria-label", `${title} project categories`);
+      proof.innerHTML = tagProject(title)
+        .map((tag) => `<span>${tag}</span>`)
+        .join("");
+      content.appendChild(proof);
+    });
+  }
+
+  function enhanceSocialLabels() {
+    document.querySelectorAll(".social-icons a, .social-links a, .whatsapp-icon").forEach((link) => {
+      if (link.getAttribute("aria-label")) {
+        return;
+      }
+
+      const href = (link.getAttribute("href") || "").toLowerCase();
+      let label = "Connect with CodeNexus";
+      if (href.includes("linkedin")) label = "CodeNexus on LinkedIn";
+      if (href.includes("github")) label = "CodeNexus on GitHub";
+      if (href.includes("instagram")) label = "CodeNexus on Instagram";
+      if (href.includes("x.com") || href.includes("twitter")) label = "CodeNexus on X";
+      if (href.includes("wa.me")) label = "Chat with CodeNexus on WhatsApp";
+      link.setAttribute("aria-label", label);
+      link.title = label;
+    });
+  }
+
+  function trackConversion(action, label) {
+    const detail = {
+      action,
+      label: label || "",
+      page: window.location.pathname.split("/").pop() || "index.html"
+    };
+
+    if (Array.isArray(window.dataLayer)) {
+      window.dataLayer.push({
+        event: `codenexus_${action}`,
+        codenexus_label: detail.label,
+        codenexus_page: detail.page
+      });
+    }
+
+    if (typeof window.gtag === "function") {
+      window.gtag("event", action, {
+        event_category: "CodeNexus",
+        event_label: detail.label
+      });
+    }
+
+    window.dispatchEvent(new CustomEvent("codenexus:track", { detail }));
+  }
+
+  function attachAnalyticsHooks() {
+    document.addEventListener("click", (event) => {
+      const link = event.target.closest("a");
+      if (!link) {
+        return;
+      }
+
+      if (link.dataset.track) {
+        trackConversion(link.dataset.track, link.dataset.trackLabel || link.textContent.trim());
+        return;
+      }
+
+      const href = link.getAttribute("href") || "";
+      if (href.includes("wa.me")) {
+        trackConversion("whatsapp_click", link.dataset.orderService || link.textContent.trim() || "WhatsApp");
+      } else if (link.classList.contains("visit-btn") || /^https?:\/\//i.test(href)) {
+        trackConversion("demo_visit", link.textContent.trim() || href);
+      }
     });
   }
 
@@ -580,6 +692,9 @@
     activateCurrentNav();
     enhanceSavvyNavbar();
     enhanceScrollAnimations();
+    professionalizePortfolioCards();
+    enhanceSocialLabels();
+    attachAnalyticsHooks();
     addCardTilt();
     attachOrderButtons();
     attachWhatsappForms();
