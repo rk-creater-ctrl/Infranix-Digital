@@ -3,8 +3,9 @@ const path = require("path");
 
 const root = __dirname;
 const baseUrl = "https://codenexus.vercel.app";
-const brandName = "SR Tech Innovation & Solution Pvt. Ltd.";
-const logoFile = "company_logo.png";
+const brandName = "Infranix Digital";
+const headerLogoFile = "logo-icon.png";
+const logoFile = "logo.png";
 const defaultImage = `${baseUrl}/${logoFile}`;
 const today = "2026-06-27";
 
@@ -140,8 +141,9 @@ const pageMeta = {
 };
 
 const imageAlts = {
-  "company_logo.png": `${brandName} crowned shield logo`,
+  "company_logo.png": `${brandName} logo`,
   "logo.png": `${brandName} logo`,
+  "logo-icon.png": `${brandName} icon logo`,
   "logo01.png": `${brandName} brand logo`,
   "web.jpeg": "Responsive web development service illustration",
   "AI.jpeg": "Artificial intelligence service illustration",
@@ -274,16 +276,16 @@ function getMeta(file, html) {
 function normalizeText(html) {
   return html
     .replace(/&amp;amp;/g, "&amp;")
-    .replace(/©/g, "&copy;")
     .replace(/Â©/g, "&copy;")
-    .replace(/Letâ€™s/g, "Let's")
-    .replace(/letâ€™s/g, "let's")
-    .replace(/â€™/g, "'")
-    .replace(/â€“/g, "-")
-    .replace(/â€”/g, "-")
-    .replace(/ðŸ“\s*/g, "")
-    .replace(/ðŸ“ž\s*/g, "")
-    .replace(/âœ‰\s*/g, "")
+    .replace(/Ã‚Â©/g, "&copy;")
+    .replace(/LetÃ¢â‚¬â„¢s/g, "Let's")
+    .replace(/letÃ¢â‚¬â„¢s/g, "let's")
+    .replace(/Ã¢â‚¬â„¢/g, "'")
+    .replace(/Ã¢â‚¬â€œ/g, "-")
+    .replace(/Ã¢â‚¬â€/g, "-")
+    .replace(/Ã°Å¸â€œÂ\s*/g, "")
+    .replace(/Ã°Å¸â€œÅ¾\s*/g, "")
+    .replace(/Ã¢Å“â€°\s*/g, "")
     .replace(/My Services/g, "Client Services")
     .replace(/My Projects/g, "Client Work")
     .replace(/Showcasing Innovation, Technology & Creativity/g, "Websites, software tools, automation demos, and service-ready builds")
@@ -299,6 +301,7 @@ function normalizeText(html) {
     .replace(/GitHub Pages/g, "Vercel")
     .replace(/(?<![\/_A-Za-z0-9-])CodeNexus(?![A-Za-z0-9-])/g, brandName)
     .replace(/Pvt\. Ltd\.\./g, "Pvt. Ltd.")
+    .replace(/company_logo\.png/g, logoFile)
     .replace(/logo01\.png/g, logoFile)
     .replace(/(?<!company_)logo\.png/g, logoFile);
 }
@@ -533,6 +536,13 @@ function ensureContactLinks(html) {
     .replace(/<li><i class="fas fa-envelope"><\/i> ritikkushwaha3893@gmail\.com , codenexus199@gmail\.com<\/li>/g, '<li><i class="fas fa-envelope"></i> <a href="mailto:codenexus199@gmail.com">codenexus199@gmail.com</a></li>');
 }
 
+function ensureBrandLogos(html) {
+  html = html.replace(/<link rel="icon" type="image\/png" href="[^"]+">/i, `<link rel="icon" type="image/png" href="${headerLogoFile}">`);
+  html = html.replace(/(<header[\s\S]*?<nav class="menu">[\s\S]*?<img[^>]*src=")([^"]+)(")/i, `$1${headerLogoFile}$3`);
+  html = html.replace(/(<footer[\s\S]*?<img[^>]*class="footer-logo"[^>]*src=")([^"]+)(")/i, `$1${logoFile}$3`);
+  return html;
+}
+
 function ensureTrackingAttributes(html) {
   html = html.replace(/<a\b([^>]*data-order-service="([^"]+)"[^>]*)>/gi, (match, attrs, service) => {
     if (/\sdata-track\s*=/.test(attrs)) {
@@ -573,7 +583,7 @@ function processHtml(file) {
 <link rel="canonical" href="${escapeAttr(meta.canonical)}">
 <meta http-equiv="refresh" content="0; url=python-software.html">
 <title>${escapeAttr(meta.title)}</title>
-<link rel="icon" type="image/png" href="${logoFile}">
+<link rel="icon" type="image/png" href="${headerLogoFile}">
 </head>
 <body>
 <main>
@@ -590,6 +600,7 @@ function processHtml(file) {
   const before = html;
   html = normalizeText(html);
   html = ensureTitleDescriptionCanonical(html, file, meta);
+  html = ensureBrandLogos(html);
   html = enhanceImages(html);
   html = enhanceExternalLinks(html);
   html = ensureContactLinks(html);

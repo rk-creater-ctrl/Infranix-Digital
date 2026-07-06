@@ -1,8 +1,8 @@
 (function () {
   const whatsappNumber = "916266324835";
-  const brandName = "SR Tech Innovation & Solution Pvt. Ltd.";
-  const brandMain = "SR Tech Innovation";
-  const brandSub = "Solution Pvt. Ltd.";
+  const brandName = "Infranix Digital";
+  const brandMain = "Infranix";
+  const brandSub = "Digital";
 
   const fallbackLinks = {
     x: "https://x.com/_CodeNexus",

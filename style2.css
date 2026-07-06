@@ -136,7 +136,7 @@ body {
 }
 
 .about-text ul li::before {
-    content: "✔️";
+    content: "âœ”ï¸";
     position: absolute;
     left: 0;
     color: #007BFF;
@@ -542,7 +542,7 @@ background-color:#000000
 }
 
 /* ========================= */
-/* 📱 Responsive Design */
+/* ðŸ“± Responsive Design */
 /* ========================= */
 
 /* Small devices (phones) */
