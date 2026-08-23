@@ -13,6 +13,7 @@
   const importantPages = [
     { href: "privacy-policy.html", label: "Privacy Policy", icon: "fa-user-shield" },
     { href: "terms-and-conditions.html", label: "Terms and Conditions", icon: "fa-file-contract" },
+    { href: "refund-cancellation-policy.html", label: "Refund/Cancellation", icon: "fa-rotate-left" },
     { href: "service-policy.html", label: "Service Policy", icon: "fa-clipboard-list" },
     { href: "disclaimer.html", label: "Disclaimer", icon: "fa-exclamation-circle" }
   ];

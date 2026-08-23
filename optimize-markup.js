@@ -2,12 +2,13 @@ const fs = require("fs");
 const path = require("path");
 
 const root = __dirname;
-const baseUrl = "https://codenexus.vercel.app";
+const baseUrl = "https://infranix-digital.vercel.app";
 const brandName = "Infranix Digital";
+const businessEmail = "codenexus199@gmail.com";
 const headerLogoFile = "logo-icon.png";
 const logoFile = "logo.png";
 const defaultImage = `${baseUrl}/${logoFile}`;
-const today = "2026-06-27";
+const today = "2026-08-23";
 
 const pageMeta = {
   "index.html": {
@@ -123,6 +124,12 @@ const pageMeta = {
   "terms-and-conditions.html": {
     title: `Terms and Conditions | ${brandName}`,
     description: `Review ${brandName} terms and conditions for service inquiries, project scope, pricing, delivery, revisions, intellectual property, and client responsibilities.`,
+    priority: "0.4",
+    changefreq: "yearly"
+  },
+  "refund-cancellation-policy.html": {
+    title: `Refund & Cancellation Policy | ${brandName}`,
+    description: `Read the ${brandName} refund and cancellation policy for custom digital services, project deposits, scope changes, and support.`,
     priority: "0.4",
     changefreq: "yearly"
   },
@@ -341,7 +348,7 @@ function buildSchema(file, meta) {
     image: defaultImage,
     description: pageMeta["index.html"].description,
     telephone: "+91 6266324835",
-    email: "codenexus199@gmail.com",
+    email: businessEmail,
     address: {
       "@type": "PostalAddress",
       addressLocality: "Rewa",
@@ -530,10 +537,19 @@ function enhanceExternalLinks(html) {
 
 function ensureContactLinks(html) {
   return html
+    .replace(/ritikkushwaha3893@gmail\.com/gi, businessEmail)
     .replace(/<p><i class="fas fa-phone"><\/i> \+91 6266324835<\/p>/g, '<p><i class="fas fa-phone"></i> <a href="tel:+916266324835">+91 6266324835</a></p>')
     .replace(/<p><i class="fas fa-envelope"><\/i> ritikkushwaha3893@gmail\.com<\/p>/g, '<p><i class="fas fa-envelope"></i> <a href="mailto:ritikkushwaha3893@gmail.com">ritikkushwaha3893@gmail.com</a></p>')
     .replace(/<li><i class="fas fa-phone"><\/i> \+91 6266324835<\/li>/g, '<li><i class="fas fa-phone"></i> <a href="tel:+916266324835">+91 6266324835</a></li>')
     .replace(/<li><i class="fas fa-envelope"><\/i> ritikkushwaha3893@gmail\.com , codenexus199@gmail\.com<\/li>/g, '<li><i class="fas fa-envelope"></i> <a href="mailto:codenexus199@gmail.com">codenexus199@gmail.com</a></li>');
+}
+
+function ensureFooterPolicyLinks(html) {
+  const policyLinks = `<div class="footer-policy-source"><a href="privacy-policy.html">Privacy Policy</a><span aria-hidden="true"> | </span><a href="terms-and-conditions.html">Terms &amp; Conditions</a><span aria-hidden="true"> | </span><a href="refund-cancellation-policy.html">Refund/Cancellation Policy</a></div>`;
+  if (/refund-cancellation-policy\.html/i.test(html)) {
+    return html;
+  }
+  return html.replace(/(<div class="footer-bottom"[^>]*>)/i, `${policyLinks}$1`);
 }
 
 function ensureBrandLogos(html) {
@@ -604,6 +620,7 @@ function processHtml(file) {
   html = enhanceImages(html);
   html = enhanceExternalLinks(html);
   html = ensureContactLinks(html);
+  html = ensureFooterPolicyLinks(html);
   html = ensureTrackingAttributes(html);
   html = ensureSocialAndSchema(html, file, meta);
 

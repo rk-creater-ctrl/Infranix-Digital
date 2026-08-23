@@ -2144,6 +2144,25 @@ button.btn:hover {
   color: inherit;
 }
 
+.footer-policy-source {
+  margin: 24px auto 0;
+  padding: 0 20px;
+  text-align: center;
+  color: var(--cn-muted);
+  font-size: 0.9rem;
+}
+
+.footer-policy-source a {
+  color: var(--cn-muted);
+  text-decoration: none;
+}
+
+.footer-policy-source a:hover,
+.footer-policy-source a:focus-visible {
+  color: var(--cn-cyan);
+  text-decoration: underline;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-slide,
   .hero h1,
