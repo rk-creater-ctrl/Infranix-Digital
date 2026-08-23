@@ -4,7 +4,7 @@ const path = require("path");
 const root = __dirname;
 const baseUrl = "https://infranix-digital.vercel.app";
 const brandName = "Infranix Digital";
-const businessEmail = "codenexus199@gmail.com";
+const businessEmail = "ritikkushwaha3893@gmail.com";
 const headerLogoFile = "logo-icon.png";
 const logoFile = "logo.png";
 const defaultImage = `${baseUrl}/${logoFile}`;
@@ -537,7 +537,7 @@ function enhanceExternalLinks(html) {
 
 function ensureContactLinks(html) {
   return html
-    .replace(/ritikkushwaha3893@gmail\.com/gi, businessEmail)
+    .replace(/codenexus199@gmail\.com/gi, businessEmail)
     .replace(/<p><i class="fas fa-phone"><\/i> \+91 6266324835<\/p>/g, '<p><i class="fas fa-phone"></i> <a href="tel:+916266324835">+91 6266324835</a></p>')
     .replace(/<p><i class="fas fa-envelope"><\/i> ritikkushwaha3893@gmail\.com<\/p>/g, '<p><i class="fas fa-envelope"></i> <a href="mailto:ritikkushwaha3893@gmail.com">ritikkushwaha3893@gmail.com</a></p>')
     .replace(/<li><i class="fas fa-phone"><\/i> \+91 6266324835<\/li>/g, '<li><i class="fas fa-phone"></i> <a href="tel:+916266324835">+91 6266324835</a></li>')
