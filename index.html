@@ -21,8 +21,9 @@
 }
 
 body {
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    color: #fff;
+    background: var(--cn-bg, #090e1a);
+    color: var(--cn-text, #f1f5f9);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     scroll-behavior: smooth;
 }
 
@@ -59,7 +60,7 @@ header {
     position: absolute;
     width: 0;
     height: 2px;
-    background: #00e5ff;
+    background: var(--cn-cyan, #38bdf8);
     left: 0;
     bottom: -5px;
     transition: 0.3s;
@@ -77,7 +78,7 @@ header {
 
 .hero h1 {
     font-size: 2.8rem;
-    color: #00e5ff;
+    color: var(--cn-cyan, #38bdf8);
     margin-bottom: 20px;
 }
 
@@ -92,8 +93,8 @@ header {
     display: inline-block;
     margin-top: 30px;
     padding: 14px 35px;
-    background: linear-gradient(45deg, #00e5ff, #00ffa2);
-    color: #000;
+    background: linear-gradient(135deg, var(--cn-cyan, #38bdf8), var(--cn-gold, #d4af37));
+    color: #04111d;
     font-weight: bold;
     border-radius: 30px;
     text-decoration: none;
@@ -101,8 +102,8 @@ header {
 }
 
 .btn:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0 25px #00e5ff;
+    transform: scale(1.05);
+    box-shadow: 0 10px 28px rgba(56, 189, 248, 0.22);
 }
 
 /* ================= SERVICES ================= */
@@ -114,7 +115,7 @@ header {
 .featured-services h2 {
     font-size: 2.5rem;
     margin-bottom: 50px;
-    color: #00ffa2;
+    color: var(--cn-green, #34d399);
 }
 
 .service-list {
@@ -126,15 +127,16 @@ header {
 }
 
 .service-item {
-    background: rgba(255,255,255,0.08);
+    background: var(--cn-panel, rgba(15, 23, 42, 0.78));
+    border: 1px solid var(--cn-border, rgba(255, 255, 255, 0.08));
     padding: 30px;
     border-radius: 20px;
     transition: 0.4s;
 }
 
 .service-item:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 0 30px rgba(0,229,255,0.4);
+    transform: translateY(-8px);
+    box-shadow: 0 16px 45px rgba(0,0,0,0.4), 0 0 25px rgba(56,189,248,0.12);
 }
 
 .service-item img {
@@ -144,7 +146,7 @@ header {
 
 .service-item h3 {
     margin-bottom: 10px;
-    color: #00e5ff;
+    color: var(--cn-cyan, #38bdf8);
 }
 
 /* ================= WHY CHOOSE ================= */
@@ -194,8 +196,12 @@ header {
 .cta {
     padding: 80px 20px;
     text-align: center;
-    background: linear-gradient(135deg, #00e5ff, #00ffa2);
-    color: #000;
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.12), rgba(212, 175, 55, 0.1));
+    color: var(--cn-text, #f1f5f9);
+    border: 1px solid var(--cn-border, rgba(255, 255, 255, 0.08));
+    border-radius: 24px;
+    max-width: 1160px;
+    margin: 40px auto;
 }
 
 .cta h2 {
@@ -221,7 +227,7 @@ header {
 }
 
 .footer h3 {
-    color: #00e5ff;
+    color: var(--cn-cyan, #38bdf8);
 }
 
 .footer a {
@@ -230,7 +236,7 @@ header {
 }
 
 .footer a:hover {
-    color: #00e5ff;
+    color: var(--cn-cyan, #38bdf8);
 }
 
 .social-icons a {
@@ -305,22 +311,22 @@ header {
 <section class="hero scroll-animate fade-up">
 <div class="hero-slider" aria-hidden="true">
 <div class="hero-slide hero-slide-1">
-<img src="School-website.webp" alt="Savvy Mother Toddler School website screenshot" loading="eager" decoding="async">
+<img src="edu-nova-erp.webp" alt="EDU-NOVA school management ERP software dashboard screenshot" loading="eager" decoding="async">
 </div>
 <div class="hero-slide hero-slide-2">
-<img src="Tech-news-hub-site.webp" alt="Tech news hub website screenshot" loading="eager" decoding="async">
+<img src="savvy-mother-school.webp" alt="Savvy Mother International School website screenshot" loading="eager" decoding="async">
 </div>
 <div class="hero-slide hero-slide-3">
-<img src="school-management.webp" alt="School management system screenshot" loading="eager" decoding="async">
+<img src="result-portal.webp" alt="Result and marksheet verification portal screenshot" loading="eager" decoding="async">
 </div>
 <div class="hero-slide hero-slide-4">
-<img src="chatbot.webp" alt="AI chatbot project screenshot" loading="eager" decoding="async">
+<img src="synapse-neet-app.webp" alt="Synapse NEET-UG medical aspirant preparation app screenshot" loading="eager" decoding="async">
 </div>
 <div class="hero-slide hero-slide-5">
-<img src="Automobile-site.webp" alt="Automobile website screenshot" loading="eager" decoding="async">
+<img src="School-website.webp" alt="Savvy Mother Toddler School website screenshot" loading="eager" decoding="async">
 </div>
 <div class="hero-slide hero-slide-6">
-<img src="import-export-site.webp" alt="Import export business website screenshot" loading="eager" decoding="async">
+<img src="Tech-news-hub-site.webp" alt="Tech news hub website screenshot" loading="eager" decoding="async">
 </div>
 </div>
 <div class="hero-inner">
@@ -337,7 +343,7 @@ header {
 <section class="trust-strip scroll-animate fade-up" aria-label="Infranix Digital trust signals">
 <div class="trust-strip-grid">
 <div class="trust-stat">
-<strong>23+ project samples</strong>
+<strong>27+ project samples</strong>
 <span>Websites, software tools, automation builds, and school systems shown in the portfolio.</span>
 </div>
 <div class="trust-stat">
@@ -529,17 +535,41 @@ header {
 </section>
 
 <section class="testimonials scroll-animate fade-right">
-<h2>Client Proof</h2>
+<h2>Client Proof &amp; Recent Builds</h2>
 <div class="testimonial-list">
 <div class="testimonial-item client-card">
+<span class="package-badge">Cloud ERP</span>
+<h3>EDU-NOVA School ERP</h3>
+<p>Institutional management cockpit for Savvy Mother International School: admissions, fees, staff, attendance, CRM leads, and fleet transport.</p>
+<a href="https://savvy-school-management.vercel.app" class="outline-btn" target="_blank" rel="noopener">View Live ERP</a>
+</div>
+<div class="testimonial-item client-card">
 <span class="package-badge">School Website</span>
+<h3>Savvy Mother International School</h3>
+<p>Official institutional school website with responsive design, campus showcase, academics, facilities, events, and online admissions.</p>
+<a href="https://rk-creater-ctrl.github.io/SAVVY-MOTHER-SCHOOL/index.html" class="outline-btn" target="_blank" rel="noopener">View Live Website</a>
+</div>
+<div class="testimonial-item client-card">
+<span class="package-badge">Result Portal</span>
+<h3>Result &amp; Marksheet Portal</h3>
+<p>Online examination verification platform with session filtering, roll/enrollment number lookup, instant marksheets, and admin portal.</p>
+<a href="https://resulta-tau.vercel.app" class="outline-btn" target="_blank" rel="noopener">View Live Portal</a>
+</div>
+<div class="testimonial-item client-card">
+<span class="package-badge">Mobile App</span>
+<h3>Synapse NEET-UG App</h3>
+<p>Dedicated medical aspirant mobile preparation app with AI smart study plan, doctor mentor daily targets (20Q + 20FC), and live leaderboard.</p>
+<a href="projects.html" class="outline-btn">View App Details</a>
+</div>
+<div class="testimonial-item client-card">
+<span class="package-badge">Toddler School</span>
 <h3>Savvy Mother Toddler School</h3>
 <p>Created a responsive school website for admissions, notices, gallery, academics, and parent inquiries.</p>
 <a href="https://toddlerlearner.com" class="outline-btn" target="_blank" rel="noopener">View Website</a>
 </div>
 <div class="testimonial-item client-card">
 <span class="package-badge">Attendance System</span>
-<h3>Savvy Mother International School</h3>
+<h3>Savvy Mother Attendance System</h3>
 <p>Built a face recognition attendance system to support faster student attendance and school record workflows.</p>
 <a href="projects.html" class="outline-btn">View Project</a>
 </div>

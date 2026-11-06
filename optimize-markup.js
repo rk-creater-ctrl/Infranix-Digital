@@ -182,7 +182,12 @@ const imageAlts = {
   "receipt-maker.png": "Receipt maker software screenshot",
   "image2.png": "Robo car prototype photo",
   "School-website.png": "Savvy Mother Toddler School website screenshot",
-  "school-management.png": "School management system screenshot"
+  "school-management.png": "School management system screenshot",
+  "savvy-mother-school.webp": "Savvy Mother International School website screenshot",
+  "edu-nova-erp.webp": "EDU-NOVA school management ERP software dashboard screenshot",
+  "result-portal.webp": "Result and marksheet verification portal screenshot",
+  "synapse-neet-app.webp": "Synapse NEET-UG medical aspirant preparation app screenshot",
+  "synapse-neet-app-full.webp": "Synapse NEET-UG mobile application screenshot"
 };
 
 const serviceOffers = [

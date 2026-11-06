@@ -21,8 +21,9 @@
 }
 
 body{
-    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-    color:#fff;
+    background:var(--cn-bg, #090e1a);
+    color:var(--cn-text, #f1f5f9);
+    font-family:'Inter', -apple-system, sans-serif;
 }
 
 /* ===== NAVBAR ===== */
@@ -56,7 +57,7 @@ header{
     position:absolute;
     width:0;
     height:2px;
-    background:#00e5ff;
+    background:var(--cn-cyan, #38bdf8);
     left:0;
     bottom:-5px;
     transition:0.3s;
@@ -72,7 +73,7 @@ header{
 .projects-title{
     text-align:center;
     font-size:2.7rem;
-    color:#00e5ff;
+    color:var(--cn-cyan, #38bdf8);
     margin-bottom:10px;
 }
 
@@ -101,7 +102,7 @@ header{
 
 .project-card:hover{
     transform:translateY(-12px);
-    box-shadow:0 0 30px rgba(0,229,255,0.4);
+    box-shadow:0 18px 45px rgba(0,0,0,0.45), 0 0 25px rgba(56,189,248,0.12);
 }
 
 .project-card img{
@@ -115,7 +116,7 @@ header{
 }
 
 .project-content h3{
-    color:#00ffa2;
+    color:var(--cn-green, #34d399);
     margin-bottom:10px;
 }
 
@@ -136,7 +137,7 @@ header{
     background:none;
     border:none;
     font-size:20px;
-    color:#00e5ff;
+    color:var(--cn-cyan, #38bdf8);
     cursor:pointer;
 }
 
@@ -159,14 +160,14 @@ header{
 }
 
 .footer-logo{width:70px;}
-.footer h3{color:#00e5ff;}
+.footer h3{color:var(--cn-cyan, #38bdf8);}
 
 .footer a{
     color:#ccc;
     text-decoration:none;
 }
 
-.footer a:hover{color:#00e5ff;}
+.footer a:hover{color:var(--cn-cyan, #38bdf8);}
 
 .social-icons a{
     font-size:20px;
@@ -237,12 +238,120 @@ header{
 <h1 class="projects-title scroll-animate">Selected Work &amp; Concepts</h1>
 <p class="projects-tagline scroll-animate">Live client work is identified below; the remaining cards are personal prototypes, concepts, or sample builds.</p>
 
+<div class="portfolio-filter-bar scroll-animate">
+<button class="filter-pill active" data-filter="all"><i class="fas fa-th-large"></i> All Work (28)</button>
+<button class="filter-pill" data-filter="flagship"><i class="fas fa-star"></i> Featured Client Builds</button>
+<button class="filter-pill" data-filter="school-erp"><i class="fas fa-graduation-cap"></i> School &amp; ERP Systems</button>
+<button class="filter-pill" data-filter="live-websites"><i class="fas fa-globe"></i> Live Websites</button>
+<button class="filter-pill" data-filter="mobile-ai"><i class="fas fa-brain"></i> Mobile Apps &amp; AI</button>
+<button class="filter-pill" data-filter="python-tools"><i class="fas fa-microchip"></i> Python &amp; Hardware</button>
+</div>
+
 <div class="projects-grid">
 
 <div class="quote-card project-intro scroll-animate"><strong>Portfolio note:</strong> Live external links identify published client work. Cards without a live client link are demonstrations, learning projects, prototypes, or internal samples.</div>
 
+<!-- Featured Recent Project: EDU-NOVA ERP -->
+<div class="project-card flagship-card scroll-animate" data-category="flagship school-erp">
+<img src="edu-nova-erp.webp" alt="EDU-NOVA school management ERP software dashboard screenshot" loading="lazy" decoding="async">
+<div class="project-content">
+<span class="verified-badge"><i class="fas fa-check-circle"></i> Verified Client Build</span>
+<h3>EDU-NOVA Institutional ERP</h3>
+<p>Comprehensive school ERP software cockpit designed for Savvy Mother International School (Rewa Campus). Features real-time control for admissions, student desk KYC, staff rosters, attendance tracking, fee ledgers with receipt issue, live CRM website leads, and fleet transport operations.</p>
+<div class="project-proof">
+<span>Live ERP Cockpit</span>
+<span>Next.js &amp; Cloud</span>
+<span>Fee &amp; Attendance</span>
+<span>Savvy Mother School</span>
+</div>
+<div class="project-actions">
+<a href="https://savvy-school-management.vercel.app" class="visit-btn" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Visit Live</a>
+<div class="like-dislike">
+<button class="like-btn"><i class="fas fa-thumbs-up"></i></button>
+<span class="like-count">0</span>
+<button class="dislike-btn"><i class="fas fa-thumbs-down"></i></button>
+<span class="dislike-count">0</span>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Featured Recent Project: Savvy Mother International School Website -->
+<div class="project-card flagship-card scroll-animate" data-category="flagship live-websites">
+<img src="savvy-mother-school.webp" alt="Savvy Mother International School website screenshot" loading="lazy" decoding="async">
+<div class="project-content">
+<span class="verified-badge"><i class="fas fa-check-circle"></i> Verified Client Build</span>
+<h3>Savvy Mother International School Website</h3>
+<p>Official institutional website for Savvy Mother International School. Built with a responsive modern layout, interactive discovery hero (&quot;Discover. Create. Innovate.&quot;), academic curricula, campus facilities, events calendar, and direct &quot;Apply Now&quot; admission pipeline.</p>
+<div class="project-proof">
+<span>Live School Site</span>
+<span>Admissions Pipeline</span>
+<span>Mobile-First UI</span>
+<span>GitHub Pages</span>
+</div>
+<div class="project-actions">
+<a href="https://rk-creater-ctrl.github.io/SAVVY-MOTHER-SCHOOL/index.html" class="visit-btn" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Visit Live</a>
+<div class="like-dislike">
+<button class="like-btn"><i class="fas fa-thumbs-up"></i></button>
+<span class="like-count">0</span>
+<button class="dislike-btn"><i class="fas fa-thumbs-down"></i></button>
+<span class="dislike-count">0</span>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Featured Recent Project: Result Portal -->
+<div class="project-card flagship-card scroll-animate" data-category="flagship live-websites school-erp">
+<img src="result-portal.webp" alt="Result and marksheet verification portal screenshot" loading="lazy" decoding="async">
+<div class="project-content">
+<span class="verified-badge"><i class="fas fa-check-circle"></i> Verified Client Build</span>
+<h3>Result &amp; Marksheet Verification Portal</h3>
+<p>Online examination marksheet checking and student record portal for educational boards and institutes. Allows students to select academic sessions and published exams, enter roll/enrollment numbers, and retrieve verified marksheets instantly with an administrative login portal.</p>
+<div class="project-proof">
+<span>Live Result Portal</span>
+<span>Instant Marksheets</span>
+<span>Session Filtering</span>
+<span>Admin Control</span>
+</div>
+<div class="project-actions">
+<a href="https://resulta-tau.vercel.app" class="visit-btn" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Visit Live</a>
+<div class="like-dislike">
+<button class="like-btn"><i class="fas fa-thumbs-up"></i></button>
+<span class="like-count">0</span>
+<button class="dislike-btn"><i class="fas fa-thumbs-down"></i></button>
+<span class="dislike-count">0</span>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Featured Recent Project: Synapse NEET-UG App -->
+<div class="project-card flagship-card scroll-animate" data-category="flagship mobile-ai">
+<img src="synapse-neet-app.webp" alt="Synapse NEET-UG medical aspirant preparation app screenshot" loading="lazy" decoding="async">
+<div class="project-content">
+<h3>Synapse NEET-UG Mobile App</h3>
+<p>Dedicated medical aspirant portal and Android mobile application targeting NEET 680+ scorers. Features AI-powered smart study planning, daily targets curated by doctor mentors (20 Questions &amp; 20 Flashcards), top rankers live leaderboard, and an interactive learning community.</p>
+<div class="project-proof">
+<span>Android App</span>
+<span>AI Study Plan</span>
+<span>Doctor Mentor Targets</span>
+<span>Ranker Leaderboard</span>
+</div>
+<div class="project-actions">
+<a href="order.html" class="visit-btn"><i class="fas fa-mobile-alt"></i> Inquire / Demo</a>
+<div class="like-dislike">
+<button class="like-btn"><i class="fas fa-thumbs-up"></i></button>
+<span class="like-count">0</span>
+<button class="dislike-btn"><i class="fas fa-thumbs-down"></i></button>
+<span class="dislike-count">0</span>
+</div>
+</div>
+</div>
+</div>
+
 <!-- Project 1 -->
-<div class="project-card scroll-animate">
+<div class="project-card scroll-animate" data-category="python-tools">
 <img src="chitti.webp" alt="Arduino robot project prototype" loading="lazy" decoding="async">
 <div class="project-content">
 <h3>CHITTI Robot</h3>
@@ -257,7 +366,7 @@ header{
 </div>
 
 <!-- Project 2 -->
-<div class="project-card scroll-animate">
+<div class="project-card scroll-animate" data-category="python-tools">
 <img src="robocar.webp" alt="Arduino robo car project prototype" loading="lazy" decoding="async">
 <div class="project-content">
 <h3>UNO Robo Car</h3>
@@ -272,7 +381,7 @@ header{
 </div>
 
 <!-- Project 3 -->
-<div class="project-card scroll-animate">
+<div class="project-card scroll-animate" data-category="live-websites">
 <img src="image11.webp" alt="Responsive website project screenshot" loading="lazy" decoding="async">
 <div class="project-content">
 <h3>Responsive Website</h3>
@@ -290,7 +399,7 @@ header{
 </div>
 
 <!-- Project 4 -->
-<div class="project-card scroll-animate">
+<div class="project-card scroll-animate" data-category="mobile-ai python-tools">
 <img src="chatbot.webp" alt="AI chatbot project screenshot" loading="lazy" decoding="async">
 <div class="project-content">
 <h3>AI Chatbot</h3>
@@ -305,7 +414,7 @@ header{
 </div>
 
 <!-- Project 5 -->
-<div class="project-card scroll-animate">
+<div class="project-card scroll-animate" data-category="python-tools">
 <img src="automation.webp" alt="Automation project screenshot" loading="lazy" decoding="async">
 <div class="project-content">
 <h3>Robotics Automation</h3>
@@ -320,7 +429,7 @@ header{
 </div>
 
 <!-- Project 6 -->
-<div class="project-card scroll-animate">
+<div class="project-card scroll-animate" data-category="python-tools">
 <img src="parking_system.webp" alt="Smart parking system project screenshot" loading="lazy" decoding="async">
 <div class="project-content">
 <h3>Automatic Parking System</h3>
@@ -335,7 +444,7 @@ header{
 </div>
 
 <!-- Project 7 -->
-<div class="project-card scroll-animate">
+<div class="project-card scroll-animate" data-category="school-erp python-tools">
 <img src="Attendance_system.webp" alt="Attendance system project screenshot" loading="lazy" decoding="async">
 <div class="project-content">
 <h3>Savvy Mother International School Attendance System</h3>
@@ -350,7 +459,7 @@ header{
 </div>
 
 <!-- Project 8 -->
-<div class="project-card scroll-animate">
+<div class="project-card scroll-animate" data-category="live-websites">
 <img src="Job_Portal.webp" alt="Job portal website project screenshot" loading="lazy" decoding="async">
 <div class="project-content">
 <h3>Job Portal</h3>
@@ -365,7 +474,7 @@ header{
 </div>
 
 <!-- Project 9 -->
-<div class="project-card scroll-animate">
+<div class="project-card scroll-animate" data-category="mobile-ai python-tools">
 <img src="AI-healthcare.webp" alt="AI healthcare project screenshot" loading="lazy" decoding="async">
 <div class="project-content">
 <h3>AI Healthcare Concept</h3>
@@ -380,7 +489,7 @@ header{
 </div>
 
 <!-- Project 10 -->
-<div class="project-card scroll-animate">
+<div class="project-card scroll-animate" data-category="python-tools">
 <img src="pdf-summarizer.webp" alt="PDF summarizer tool screenshot" loading="lazy" decoding="async">
 <div class="project-content">
 <h3>PDF Summarizer</h3>
@@ -395,7 +504,7 @@ header{
 </div>
 
 <!-- Project 11 -->
-<div class="project-card scroll-animate">
+<div class="project-card scroll-animate" data-category="python-tools">
 <img src="QR-code-generator.webp" alt="QR code generator tool screenshot" loading="lazy" decoding="async">
 <div class="project-content">
 <h3>QR Code Generator</h3>
@@ -410,7 +519,7 @@ header{
 </div>
 
 <!-- Project 12 -->
-<div class="project-card scroll-animate">
+<div class="project-card scroll-animate" data-category="school-erp python-tools">
 <img src="marksheet-generator.webp" alt="Marksheet generator software screenshot" loading="lazy" decoding="async">
 <div class="project-content">
 <h3>Marksheet Generator</h3>
@@ -425,7 +534,7 @@ header{
 </div>
 
 <!-- Project 13 -->
-<div class="project-card scroll-animate">
+<div class="project-card scroll-animate" data-category="python-tools">
 <img src="youtube-downloader.webp" alt="YouTube video downloader project screenshot" loading="lazy" decoding="async">
 <div class="project-content">
 <h3>YouTube-Downloader-Pro</h3>
@@ -440,7 +549,7 @@ header{
 </div>
 
 <!-- Project 14 -->
-<div class="project-card scroll-animate">
+<div class="project-card scroll-animate" data-category="python-tools">
 <img src="object-distance-detector.webp" alt="Object distance detector project screenshot" loading="lazy" decoding="async">
 <div class="project-content">
 <h3>Object Distance Detector</h3>
@@ -455,7 +564,7 @@ header{
 </div>
 
 <!-- Project 15 -->
-<div class="project-card scroll-animate">
+<div class="project-card scroll-animate" data-category="mobile-ai">
 <img src="teaching-app.webp" alt="Teaching app concept screenshot" loading="lazy" decoding="async">
 <div class="project-content">
 <h3>Teaching App</h3>
@@ -470,7 +579,7 @@ header{
 </div>
 
 <!-- Project 16 -->
-<div class="project-card scroll-animate">
+<div class="project-card scroll-animate" data-category="live-websites">
 <img src="Tech-news-hub-site.webp" alt="Tech news hub website screenshot" loading="lazy" decoding="async">
 <div class="project-content">
 <h3>Tech News Hub Website</h3>
@@ -488,7 +597,7 @@ header{
 </div>
 
 <!-- Project 17 -->
-<div class="project-card scroll-animate">
+<div class="project-card scroll-animate" data-category="live-websites">
 <img src="Automobile-site.webp" alt="Automobile website screenshot" loading="lazy" decoding="async">
 <div class="project-content">
 <h3>Automobile Website</h3>
@@ -506,7 +615,7 @@ header{
 </div>
 
 <!-- Project 18 -->
-<div class="project-card scroll-animate">
+<div class="project-card scroll-animate" data-category="live-websites">
 <img src="import-export-site.webp" alt="Import export business website screenshot" loading="lazy" decoding="async">
 <div class="project-content">
 <h3>Import-Export Site</h3>
@@ -524,7 +633,7 @@ header{
 </div>
 
 <!-- Project 19 -->
-<div class="project-card scroll-animate">
+<div class="project-card scroll-animate" data-category="python-tools">
 <img src="activity-detector.webp" alt="Activity watcher detection system screenshot" loading="lazy" decoding="async">
 <div class="project-content">
 <h3>ActivityWatcher</h3>
@@ -539,7 +648,7 @@ header{
 </div>
 
 <!-- Project 20 -->
-<div class="project-card scroll-animate">
+<div class="project-card scroll-animate" data-category="python-tools">
 <img src="receipt-maker.webp" alt="Receipt maker software screenshot" loading="lazy" decoding="async">
 <div class="project-content">
 <h3>Receipt Maker</h3>
@@ -554,7 +663,7 @@ header{
 </div>
 
 <!-- Project 21 -->
-<div class="project-card scroll-animate">
+<div class="project-card scroll-animate" data-category="python-tools">
 <img src="image2.webp" alt="Robo car prototype photo" loading="lazy" decoding="async">
 <div class="project-content">
 <h3>Robo Car Prototype</h3>
@@ -569,7 +678,7 @@ header{
 </div>
 
 <!-- Project 22 -->
-<div class="project-card scroll-animate">
+<div class="project-card scroll-animate" data-category="live-websites school-erp">
 <img src="School-website.webp" alt="Savvy Mother Toddler School website screenshot" loading="lazy" decoding="async">
 <div class="project-content">
 <h3>Savvy Mother Toddler School Website</h3>
@@ -587,7 +696,7 @@ header{
 </div>
 
 <!-- Project 23 -->
-<div class="project-card scroll-animate">
+<div class="project-card scroll-animate" data-category="school-erp">
 <img src="school-management.webp" alt="School management system screenshot" loading="lazy" decoding="async">
 <div class="project-content">
 <h3>School Management System</h3>
@@ -602,7 +711,7 @@ header{
 </div>
 
 <!-- Project 24 -->
-<div class="project-card scroll-animate">
+<div class="project-card scroll-animate" data-category="live-websites">
 <img src="guruvandan.png" alt="Guruvandan" loading="lazy" decoding="async">
 <div class="project-content">
 <h3>Guruvandan</h3>
@@ -720,6 +829,29 @@ entry.target.classList.add("show");
 },{threshold:0.15});
 
 document.querySelectorAll(".scroll-animate").forEach(el=>observer.observe(el));
+
+/* Interactive Category Filter */
+const filterPills = document.querySelectorAll('.filter-pill');
+const allProjectCards = document.querySelectorAll('.project-card');
+
+filterPills.forEach(pill => {
+  pill.addEventListener('click', () => {
+    filterPills.forEach(p => p.classList.remove('active'));
+    pill.classList.add('active');
+    const filter = pill.getAttribute('data-filter');
+
+    allProjectCards.forEach(card => {
+      const cats = card.getAttribute('data-category') || '';
+      if (filter === 'all' || cats.includes(filter)) {
+        card.style.display = '';
+        setTimeout(() => card.classList.add('show'), 10);
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+
 </script>
 
 <script src="codenexus-modern.js"></script>
