@@ -9,8 +9,8 @@
 }
 
 body {
-  background: radial-gradient(circle at top, #111827, #020617);
-  color: #e5e7eb;
+  background: var(--cn-bg, #f8fafc);
+  color: var(--cn-text, #0f172a);
   line-height: 1.6;
 }
 
@@ -49,7 +49,7 @@ body {
   align-items: center;
   gap: 30px;
   padding: 16px 30px;
-  background: linear-gradient(135deg, #020617, #0f172a);
+  background: linear-gradient(135deg, #f8fafc, #0f172a);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -68,7 +68,7 @@ body {
 }
 
 .menu-item {
-  color: #cbd5f5;
+  color: #334155;
   text-decoration: none;
   font-weight: 600;
   position: relative;
@@ -101,7 +101,7 @@ body {
 .hero {
   text-align: center;
   padding: 120px 20px;
-  background: linear-gradient(135deg, #020617, #0f172a);
+  background: linear-gradient(135deg, #f8fafc, #0f172a);
 }
 
 .hero h1 {
@@ -112,7 +112,7 @@ body {
 .hero p {
   max-width: 720px;
   margin: 20px auto;
-  color: #cbd5f5;
+  color: #334155;
 }
 
 /* ============================= */
@@ -122,7 +122,7 @@ body {
   display: inline-block;
   padding: 12px 28px;
   background: linear-gradient(135deg, #00e5ff, #38bdf8);
-  color: #020617;
+  color: #f8fafc;
   border-radius: 30px;
   font-weight: 600;
   text-decoration: none;
@@ -159,7 +159,7 @@ body {
 
 .service-item,
 .testimonial-item {
-  background: linear-gradient(145deg, #0f172a, #020617);
+  background: linear-gradient(145deg, #0f172a, #f8fafc);
   padding: 25px;
   border-radius: 16px;
   width: 300px;
@@ -183,14 +183,14 @@ body {
 .why-choose-me li {
   margin: 12px 0;
   font-size: 1.1rem;
-  color: #cbd5f5;
+  color: #334155;
 }
 
 /* ============================= */
 /* ðŸ“£ CTA */
 /* ============================= */
 .cta {
-  background: linear-gradient(135deg, #020617, #0f172a);
+  background: linear-gradient(135deg, #f8fafc, #0f172a);
   color: #00e5ff;
 }
 
@@ -202,7 +202,7 @@ body {
   bottom: 20px;
   right: 20px;
   background: #00e676;
-  color: #020617;
+  color: #f8fafc;
   width: 65px;
   height: 65px;
   border-radius: 50%;
@@ -227,7 +227,7 @@ body {
   bottom: 20px;
   left: 20px;
   background: #00e5ff;
-  color: #020617;
+  color: #f8fafc;
   border-radius: 50%;
   width: 55px;
   height: 55px;
@@ -242,8 +242,8 @@ body {
   left: 20px;
   width: 300px;
   height: 400px;
-  background: #020617;
-  color: #e5e7eb;
+  background: #f8fafc;
+  color: var(--cn-text, #0f172a);
   border-radius: 14px;
   display: none;
   box-shadow: 0 0 35px rgba(0,229,255,0.4);
@@ -253,8 +253,8 @@ body {
 /* ðŸ‘£ FOOTER */
 /* ============================= */
 .footer {
-  background: #020617;
-  color: #cbd5f5;
+  background: #f8fafc;
+  color: #334155;
   padding: 60px 20px 25px;
 }
 
@@ -281,7 +281,7 @@ body {
 }
 
 .footer-links a {
-  color: #cbd5f5;
+  color: #334155;
   text-decoration: none;
   transition: 0.3s;
 }
