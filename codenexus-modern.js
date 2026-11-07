@@ -64,43 +64,15 @@
         return;
       }
 
-      const existingLinksColumn = container.querySelector(".footer-links");
-      const contactColumn = container.querySelector(".footer-contact");
-      const socialColumn = container.querySelector(".footer-social");
+      const footer = container.closest("footer") || container.parentElement;
 
-      existingLinksColumn?.remove();
-
-      const quickColumn = makeFooterColumn("footer-links footer-nav-links", "Quick Links", [
-        { href: "index.html", label: "Home" },
-        { href: "about.html", label: "About" },
-        { href: "projects.html", label: "Projects" },
-        { href: "contact.html", label: "Contact" }
-      ]);
-
-      const serviceColumn = makeFooterColumn("footer-links footer-service-links", "Services", [
-        { href: "services.html", label: "Services" },
-        { href: "school-website.html", label: "School Website" },
-        { href: "school-management-system.html", label: "School Management" },
-        { href: "website-erp-software.html", label: "Website + ERP" },
-        { href: "website-maintenance.html", label: "Maintenance" },
-        { href: "pricing.html", label: "Pricing" },
-        { href: "order.html", label: "Order" }
-      ]);
-
-      const policyColumn = makeFooterColumn("footer-links footer-policy-links", "Policies", importantPages);
-
-      if (contactColumn) {
-        container.insertBefore(quickColumn, contactColumn);
-        container.insertBefore(serviceColumn, contactColumn);
-        container.insertBefore(policyColumn, contactColumn);
-      } else if (socialColumn) {
-        container.insertBefore(quickColumn, socialColumn);
-        container.insertBefore(serviceColumn, socialColumn);
-        container.insertBefore(policyColumn, socialColumn);
-      } else {
-        container.appendChild(quickColumn);
-        container.appendChild(serviceColumn);
-        container.appendChild(policyColumn);
+      // Ensure Scroll to top button is active
+      const scrollBtn = footer.querySelector(".footer-scroll-top, #footerScrollTop");
+      if (scrollBtn && !scrollBtn.dataset.bound) {
+        scrollBtn.dataset.bound = "true";
+        scrollBtn.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
       }
 
       container.dataset.categorized = "true";
@@ -664,7 +636,19 @@
     });
   }
 
+  
+  function attachFooterScrollTop() {
+    document.querySelectorAll(".footer-scroll-top, #footerScrollTop").forEach((btn) => {
+      if (btn.dataset.bound) return;
+      btn.dataset.bound = "true";
+      btn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
+    attachFooterScrollTop();
     ensureSellingNavLinks();
     ensureFooterSellingLinks();
     ensureFooterImportantLinks();
