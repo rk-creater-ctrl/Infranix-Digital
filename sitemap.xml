@@ -1,128 +1,174 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://infranix-digital.vercel.app/</loc>
-    <lastmod>2026-08-23</lastmod>
+    <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://infranix-digital.vercel.app/logo.png</image:loc>
+      <image:title>Infranix Digital Official Brand Logo</image:title>
+      <image:caption>Enterprise digital engineering and software development firm</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://infranix-digital.vercel.app/edu-nova-erp.webp</image:loc>
+      <image:title>EDU-NOVA School Management ERP Dashboard</image:title>
+      <image:caption>Enterprise school ERP software architecture</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://infranix-digital.vercel.app/savvy-mother-school.webp</image:loc>
+      <image:title>Savvy Mother International School Portal</image:title>
+      <image:caption>Responsive school website development</image:caption>
+    </image:image>
   </url>
   <url>
-    <loc>https://infranix-digital.vercel.app/school-management-system</loc>
-    <lastmod>2026-08-23</lastmod>
+    <loc>https://infranix-digital.vercel.app/pricing</loc>
+    <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
+    <loc>https://infranix-digital.vercel.app/school-management-system</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://infranix-digital.vercel.app/edu-nova-erp.webp</image:loc>
+      <image:title>EDU-NOVA School Management ERP Interface</image:title>
+      <image:caption>Student, staff, attendance, and fee management software</image:caption>
+    </image:image>
+  </url>
+  <url>
     <loc>https://infranix-digital.vercel.app/school-website</loc>
-    <lastmod>2026-08-23</lastmod>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://infranix-digital.vercel.app/savvy-mother-school.webp</image:loc>
+      <image:title>School Website Development Preview</image:title>
+      <image:caption>Responsive institutional school web portal</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://infranix-digital.vercel.app/services</loc>
+    <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
     <loc>https://infranix-digital.vercel.app/website-erp-software</loc>
-    <lastmod>2026-08-23</lastmod>
+    <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://infranix-digital.vercel.app/website-maintenance</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://infranix-digital.vercel.app/order</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://infranix-digital.vercel.app/pricing</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://infranix-digital.vercel.app/services</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://infranix-digital.vercel.app/ai-chatbot</loc>
-    <lastmod>2026-08-23</lastmod>
+    <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://infranix-digital.vercel.app/chatbot.webp</image:loc>
+      <image:title>Infranix AI Chatbot Interface</image:title>
+      <image:caption>24/7 intelligent customer support and lead qualification chatbot</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://infranix-digital.vercel.app/order</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://infranix-digital.vercel.app/python-software</loc>
-    <lastmod>2026-08-23</lastmod>
+    <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://infranix-digital.vercel.app/website-maintenance</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://infranix-digital.vercel.app/contact</loc>
-    <lastmod>2026-08-23</lastmod>
+    <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://infranix-digital.vercel.app/projects</loc>
-    <lastmod>2026-08-23</lastmod>
+    <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://infranix-digital.vercel.app/edu-nova-erp.webp</image:loc>
+      <image:title>EDU-NOVA ERP Deployment Case Study</image:title>
+      <image:caption>Multi-campus school management ERP deployment</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://infranix-digital.vercel.app/result-portal.webp</image:loc>
+      <image:title>Online Examination Portal Case Study</image:title>
+      <image:caption>High-concurrency student result verification platform</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://infranix-digital.vercel.app/synapse-neet-app.webp</image:loc>
+      <image:title>Synapse NEET-UG Mobile Application</image:title>
+      <image:caption>AI target engine and medical aspirant preparation platform</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://infranix-digital.vercel.app/about</loc>
-    <lastmod>2026-08-23</lastmod>
+    <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://infranix-digital.vercel.app/AI</loc>
-    <lastmod>2026-08-23</lastmod>
+    <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://infranix-digital.vercel.app/Robotics</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://infranix-digital.vercel.app/web_development</loc>
-    <lastmod>2026-08-23</lastmod>
+    <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://infranix-digital.vercel.app/Robotics</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
   </url>
   <url>
     <loc>https://infranix-digital.vercel.app/disclaimer</loc>
-    <lastmod>2026-08-23</lastmod>
+    <lastmod>2026-11-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://infranix-digital.vercel.app/privacy-policy</loc>
-    <lastmod>2026-08-23</lastmod>
+    <lastmod>2026-11-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://infranix-digital.vercel.app/refund-cancellation-policy</loc>
-    <lastmod>2026-08-23</lastmod>
+    <lastmod>2026-11-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://infranix-digital.vercel.app/service-policy</loc>
-    <lastmod>2026-08-23</lastmod>
+    <lastmod>2026-11-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://infranix-digital.vercel.app/terms-and-conditions</loc>
-    <lastmod>2026-08-23</lastmod>
+    <lastmod>2026-11-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
