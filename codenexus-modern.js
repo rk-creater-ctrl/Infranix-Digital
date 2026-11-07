@@ -28,10 +28,9 @@
     document.querySelectorAll("header .menu").forEach((menu) => {
       const links = Array.from(menu.querySelectorAll(":scope > a"));
       const hasPricing = links.some((link) => (link.getAttribute("href") || "").includes("pricing.html"));
-      const hasOrder = links.some((link) => (link.getAttribute("href") || "").includes("order.html"));
       const contactLink = links.find((link) => (link.getAttribute("href") || "").includes("contact.html"));
       const insertBefore = contactLink || null;
-      const baseClassName = (contactLink?.className || "menu-item").replace(/\bactive\b/g, "").trim() || "menu-item";
+      const baseClassName = (contactLink?.className || "menu-item").replace(/active/g, "").trim() || "menu-item";
 
       if (!hasPricing) {
         const pricing = document.createElement("a");
@@ -39,14 +38,6 @@
         pricing.textContent = "Pricing";
         pricing.className = baseClassName;
         menu.insertBefore(pricing, insertBefore);
-      }
-
-      if (!hasOrder) {
-        const order = document.createElement("a");
-        order.href = "order.html";
-        order.textContent = "Order";
-        order.className = baseClassName;
-        menu.insertBefore(order, insertBefore);
       }
     });
   }
@@ -391,10 +382,26 @@
       navLinks.className = "cn-nav-links";
       navLinks.id = "navMenu";
 
-      const indicator = document.createElement("span");
-      indicator.className = "cn-nav-indicator";
-      indicator.id = "navIndicator";
-      navLinks.appendChild(indicator);
+      const navItems = links.filter((link) => {
+        const href = (link.getAttribute("href") || "").toLowerCase();
+        return !href.includes("contact.html");
+      });
+
+      navItems.forEach((link) => {
+        link.classList.add("nav-link");
+        navLinks.appendChild(link);
+      });
+
+      // Dedicated Right Actions: "Let's Talk" CTA + Mobile Toggle
+      const navActions = document.createElement("div");
+      navActions.className = "cn-nav-actions";
+
+      const ctaBtn = document.createElement("a");
+      ctaBtn.href = "contact.html";
+      ctaBtn.className = "nav-talk-btn";
+      ctaBtn.innerHTML = `Let's Talk <i class="fas fa-arrow-right" aria-hidden="true" style="margin-left:6px;font-size:0.8rem;"></i>`;
+      ctaBtn.setAttribute("data-track", "nav_lets_talk");
+      navActions.appendChild(ctaBtn);
 
       const toggle = document.createElement("button");
       toggle.className = "cn-menu-toggle";
@@ -403,63 +410,31 @@
       toggle.setAttribute("aria-label", "Toggle navigation menu");
       toggle.setAttribute("aria-expanded", "false");
       toggle.innerHTML = "<span></span><span></span><span></span>";
-
-      links.forEach((link) => {
-        link.classList.add("nav-link");
-        navLinks.appendChild(link);
-      });
-      navLinks.appendChild(buildImportantPagesMenu(navLinks, toggle));
+      navActions.appendChild(toggle);
 
       menu.appendChild(navLinks);
-      menu.appendChild(toggle);
+      menu.appendChild(navActions);
 
-      const moveIndicator = (targetLink) => {
-        if (!targetLink || window.innerWidth <= 1180) {
-          indicator.style.opacity = 0;
-          return;
-        }
+      // Mobile contact drawer link
+      const mobileContact = document.createElement("a");
+      mobileContact.href = "contact.html";
+      mobileContact.className = "nav-link cn-mobile-contact-link";
+      mobileContact.textContent = "Let's Talk & Inquiries";
+      navLinks.appendChild(mobileContact);
 
-        const rect = targetLink.getBoundingClientRect();
-        const containerRect = navLinks.getBoundingClientRect();
-        indicator.style.width = `${rect.width}px`;
-        indicator.style.transform = `translateX(${rect.left - containerRect.left}px)`;
-        indicator.style.opacity = 1;
-      };
+      toggle.addEventListener("click", () => {
+        const isOpen = navLinks.classList.toggle("open");
+        toggle.classList.toggle("active", isOpen);
+        toggle.setAttribute("aria-expanded", String(isOpen));
+      });
 
-      const currentActive = () => navLinks.querySelector(".nav-link.active")
-        || navLinks.querySelector(".cn-legal-menu.active .cn-legal-toggle")
-        || navLinks.querySelector(".nav-link");
-
-      setTimeout(() => moveIndicator(currentActive()), 120);
-
-      navLinks.querySelectorAll(".nav-link").forEach((link) => {
-        link.addEventListener("mouseenter", () => moveIndicator(link));
-        link.addEventListener("focus", () => moveIndicator(link));
+      navLinks.querySelectorAll("a").forEach((link) => {
         link.addEventListener("click", () => {
           navLinks.classList.remove("open");
           toggle.classList.remove("active");
           toggle.setAttribute("aria-expanded", "false");
         });
       });
-
-      navLinks.querySelectorAll(".cn-legal-toggle").forEach((button) => {
-        button.addEventListener("mouseenter", () => moveIndicator(button));
-        button.addEventListener("focus", () => moveIndicator(button));
-      });
-
-      navLinks.addEventListener("mouseleave", () => moveIndicator(currentActive()));
-
-      toggle.addEventListener("click", () => {
-        const isOpen = navLinks.classList.toggle("open");
-        toggle.classList.toggle("active", isOpen);
-        toggle.setAttribute("aria-expanded", String(isOpen));
-        navLinks.querySelectorAll(".cn-legal-menu.open").forEach((menu) => {
-          menu.classList.remove("open");
-          menu.querySelector("button")?.setAttribute("aria-expanded", "false");
-        });
-      });
-
-      window.addEventListener("resize", () => moveIndicator(currentActive()));
     });
   }
 
@@ -702,6 +677,6 @@
     addCardTilt();
     attachOrderButtons();
     attachWhatsappForms();
-    buildFloatingSocials();
+    /* Floating socials disabled for clean enterprise layout */
   });
 })();

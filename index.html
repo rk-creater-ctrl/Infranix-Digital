@@ -4,663 +4,798 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3658980469216123" crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Infranix Digital builds professional websites, school management systems, website + ERP bundles, AI chatbots, Python automation tools, and maintenance packages for schools and small businesses.">
+<meta name="description" content="Infranix Digital architects and develops intelligent digital experiences, institutional ERP software, AI chatbots, Python automation tools, and custom technology solutions.">
 <link rel="canonical" href="https://infranix-digital.vercel.app/">
-<title>Infranix Digital | Websites, School Software, AI Chatbots &amp; Automation</title>
+<title>Infranix Digital | Enterprise Digital Engineering, School ERP &amp; AI Automation</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <link rel="icon" type="image/png" href="logo-icon.png">
-
-<style>
-/* ================= GLOBAL ================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Segoe UI", sans-serif;
-}
-
-body {
-    background: var(--cn-bg, #f8fafc);
-    color: var(--cn-text, #0f172a);
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    scroll-behavior: smooth;
-}
-
-/* ================= NAVBAR ================= */
-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: rgba(0,0,0,0.8);
-    backdrop-filter: blur(10px);
-}
-
-.menu {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 25px;
-    padding: 15px;
-}
-
-.menu img {
-    height: 60px;
-}
-
-.menu a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    position: relative;
-}
-
-.menu a::after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 2px;
-    background: var(--cn-cyan, #2563eb);
-    left: 0;
-    bottom: -5px;
-    transition: 0.3s;
-}
-
-.menu a:hover::after {
-    width: 100%;
-}
-
-/* ================= HERO ================= */
-.hero {
-    text-align: center;
-    padding: 80px 20px;
-}
-
-.hero h1 {
-    font-size: 2.8rem;
-    color: var(--cn-cyan, #2563eb);
-    margin-bottom: 20px;
-}
-
-.hero p {
-    max-width: 800px;
-    margin: auto;
-    font-size: 1.1rem;
-    opacity: 0.9;
-}
-
-.btn {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 14px 35px;
-    background: linear-gradient(135deg, var(--cn-cyan, #2563eb), var(--cn-gold, #d97706));
-    color: #04111d;
-    font-weight: bold;
-    border-radius: 30px;
-    text-decoration: none;
-    transition: 0.4s;
-}
-
-.btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 28px rgba(56, 189, 248, 0.22);
-}
-
-/* ================= SERVICES ================= */
-.featured-services {
-    padding: 80px 20px;
-    text-align: center;
-}
-
-.featured-services h2 {
-    font-size: 2.5rem;
-    margin-bottom: 50px;
-    color: var(--cn-green, #059669);
-}
-
-.service-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: auto;
-}
-
-.service-item {
-    background: var(--cn-panel, rgba(15, 23, 42, 0.78));
-    border: 1px solid var(--cn-border, rgba(255, 255, 255, 0.08));
-    padding: 30px;
-    border-radius: 20px;
-    transition: 0.4s;
-}
-
-.service-item:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 16px 45px rgba(0,0,0,0.4), 0 0 25px rgba(56,189,248,0.12);
-}
-
-.service-item img {
-    height: 80px;
-    margin-bottom: 15px;
-}
-
-.service-item h3 {
-    margin-bottom: 10px;
-    color: var(--cn-cyan, #2563eb);
-}
-
-/* ================= WHY CHOOSE ================= */
-.why-choose-me {
-    padding: 70px 20px;
-    background: rgba(0,0,0,0.4);
-}
-
-.why-choose-me h2 {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.why-choose-me ul {
-    max-width: 800px;
-    margin: auto;
-    list-style: none;
-}
-
-.why-choose-me li {
-    padding: 12px;
-    font-size: 1.05rem;
-}
-
-/* ================= TESTIMONIALS ================= */
-.testimonials {
-    padding: 70px 20px;
-    text-align: center;
-}
-
-.testimonial-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-    gap: 25px;
-    max-width: 1000px;
-    margin: auto;
-}
-
-.testimonial-item {
-    background: rgba(255,255,255,0.1);
-    padding: 25px;
-    border-radius: 20px;
-    font-style: italic;
-}
-
-/* ================= CTA ================= */
-.cta {
-    padding: 80px 20px;
-    text-align: center;
-    background: linear-gradient(135deg, rgba(56, 189, 248, 0.12), rgba(212, 175, 55, 0.1));
-    color: var(--cn-text, #0f172a);
-    border: 1px solid var(--cn-border, rgba(255, 255, 255, 0.08));
-    border-radius: 24px;
-    max-width: 1160px;
-    margin: 40px auto;
-}
-
-.cta h2 {
-    font-size: 2.5rem;
-}
-
-/* ================= FOOTER (UNCHANGED) ================= */
-.footer{
-    background:linear-gradient(160deg, #edf2f7, #e2eaf2);
-    padding: 50px 20px 20px;
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 30px;
-}
-
-.footer-logo {
-    width: 70px;
-}
-
-.footer h3 {
-    color: var(--cn-cyan, #2563eb);
-}
-
-.footer a {
-    color: #ccc;
-    text-decoration: none;
-}
-
-.footer a:hover {
-    color: var(--cn-cyan, #2563eb);
-}
-
-.social-icons a {
-    font-size: 20px;
-    margin-right: 12px;
-}
-
-.footer-bottom {
-    text-align: center;
-    margin-top: 30px;
-    border-top: 1px solid #e2e8f0;
-    padding-top: 15px;
-    font-size: 13px;
-}
-
-/* ================= WHATSAPP ================= */
-.whatsapp-icon {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #25d366;
-    color: white;
-    padding: 14px;
-    border-radius: 50%;
-    font-size: 24px;
-    box-shadow: 0 0 20px rgba(37,211,102,0.7);
-}
-
-/* ================= SCROLL ANIMATIONS ================= */
-.scroll-animate {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.9s ease;
-}
-
-.scroll-animate.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.fade-left { transform: translateX(-60px); }
-.fade-right { transform: translateX(60px); }
-.fade-up { transform: translateY(60px); }
-</style>
 <link rel="stylesheet" href="codenexus-modern.css">
+
 <meta property="og:type" content="website" data-codenexus-seo>
 <meta property="og:site_name" content="Infranix Digital" data-codenexus-seo>
-<meta property="og:title" content="Infranix Digital | Websites, School Software, AI Chatbots &amp; Automation" data-codenexus-seo>
-<meta property="og:description" content="Infranix Digital builds professional websites, school management systems, website + ERP bundles, AI chatbots, Python automation tools, and maintenance packages for schools and small businesses." data-codenexus-seo>
+<meta property="og:title" content="Infranix Digital | Enterprise Digital Engineering, School ERP &amp; AI Automation" data-codenexus-seo>
+<meta property="og:description" content="Infranix Digital architects and develops intelligent digital experiences, institutional ERP software, AI chatbots, Python automation tools, and custom technology solutions." data-codenexus-seo>
 <meta property="og:url" content="https://infranix-digital.vercel.app/" data-codenexus-seo>
 <meta property="og:image" content="https://infranix-digital.vercel.app/logo.png" data-codenexus-seo>
 <meta name="twitter:card" content="summary_large_image" data-codenexus-seo>
-<meta name="twitter:title" content="Infranix Digital | Websites, School Software, AI Chatbots &amp; Automation" data-codenexus-seo>
-<meta name="twitter:description" content="Infranix Digital builds professional websites, school management systems, website + ERP bundles, AI chatbots, Python automation tools, and maintenance packages for schools and small businesses." data-codenexus-seo>
+<meta name="twitter:title" content="Infranix Digital | Enterprise Digital Engineering, School ERP &amp; AI Automation" data-codenexus-seo>
+<meta name="twitter:description" content="Infranix Digital architects and develops intelligent digital experiences, institutional ERP software, AI chatbots, Python automation tools, and custom technology solutions." data-codenexus-seo>
 <meta name="twitter:image" content="https://infranix-digital.vercel.app/logo.png" data-codenexus-seo>
-<script type="application/ld+json" data-codenexus-schema>{"@context":"https://schema.org","@graph":[{"@type":"ProfessionalService","@id":"https://infranix-digital.vercel.app/#business","name":"Infranix Digital","url":"https://infranix-digital.vercel.app/","logo":"https://infranix-digital.vercel.app/logo.png","image":"https://infranix-digital.vercel.app/logo.png","description":"Infranix Digital builds professional websites, school management systems, website + ERP bundles, AI chatbots, Python automation tools, and maintenance packages for schools and small businesses.","telephone":"+91 6266324835","email":"ritikkushwaha3893@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Rewa","addressRegion":"Madhya Pradesh","addressCountry":"IN"},"founder":{"@type":"Person","name":"Ritik Kushwaha"},"areaServed":["India","Madhya Pradesh","Rewa"],"sameAs":["https://www.linkedin.com/in/ritik-kushwaha-bb76a0355/","https://github.com/rk-creater-ctrl","https://x.com/_CodeNexus","https://www.instagram.com/_.ritik_25"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Infranix Digital service packages","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Business Website"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"School Website"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"School Management System"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Website + ERP Software"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"AI Chatbot"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Custom Python Software"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Robotics and IoT Project"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Website Maintenance"}}]}},{"@type":"WebPage","@id":"https://infranix-digital.vercel.app/#webpage","url":"https://infranix-digital.vercel.app/","name":"Infranix Digital | Websites, School Software, AI Chatbots & Automation","description":"Infranix Digital builds professional websites, school management systems, website + ERP bundles, AI chatbots, Python automation tools, and maintenance packages for schools and small businesses.","isPartOf":{"@type":"WebSite","@id":"https://infranix-digital.vercel.app/#website","name":"Infranix Digital","url":"https://infranix-digital.vercel.app/"},"provider":{"@id":"https://infranix-digital.vercel.app/#business"}}]}</script>
+
+<script type="application/ld+json" data-codenexus-schema>
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://infranix-digital.vercel.app/#business",
+      "name": "Infranix Digital",
+      "url": "https://infranix-digital.vercel.app/",
+      "logo": "https://infranix-digital.vercel.app/logo.png",
+      "image": "https://infranix-digital.vercel.app/logo.png",
+      "description": "Infranix Digital architects and develops intelligent digital experiences, institutional ERP software, AI chatbots, Python automation tools, and custom technology solutions.",
+      "telephone": "+91 6266324835",
+      "email": "ritikkushwaha3893@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Rewa",
+        "addressRegion": "Madhya Pradesh",
+        "addressCountry": "IN"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Ritik Kushwaha"
+      },
+      "areaServed": ["India", "Madhya Pradesh", "Rewa"],
+      "sameAs": [
+        "https://www.linkedin.com/in/ritik-kushwaha-bb76a0355/",
+        "https://github.com/rk-creater-ctrl",
+        "https://x.com/_CodeNexus",
+        "https://www.instagram.com/_.ritik_25"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Infranix Digital Enterprise Solutions",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Web Development"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "School & Institutional Management Software"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI Solutions & Chatbots"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Python Software Development"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Business Automation"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Robotics & IoT Solutions"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Custom Software Development"}}
+        ]
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://infranix-digital.vercel.app/#webpage",
+      "url": "https://infranix-digital.vercel.app/",
+      "name": "Infranix Digital | Enterprise Digital Engineering, School ERP & AI Automation",
+      "description": "Infranix Digital architects and develops intelligent digital experiences, institutional ERP software, AI chatbots, Python automation tools, and custom technology solutions.",
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://infranix-digital.vercel.app/#website",
+        "name": "Infranix Digital",
+        "url": "https://infranix-digital.vercel.app/"
+      },
+      "provider": {
+        "@id": "https://infranix-digital.vercel.app/#business"
+      }
+    }
+  ]
+}
+</script>
 </head>
 
 <body>
 
 <header>
-<nav class="menu">
-<img src="logo-icon.png" alt="Infranix Digital icon logo" decoding="async">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="services.html">Services</a>
-<a href="projects.html">Projects</a>
-<a href="contact.html">Contact</a>
-</nav>
+  <nav class="menu">
+    <img src="logo-icon.png" alt="Infranix Digital icon logo" decoding="async">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="projects.html">Projects</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 </header>
 
-<section class="hero scroll-animate fade-up">
-<div class="hero-slider" aria-hidden="true">
-<div class="hero-slide hero-slide-1">
-<img src="edu-nova-erp.webp" alt="EDU-NOVA school management ERP software dashboard screenshot" loading="eager" decoding="async">
-</div>
-<div class="hero-slide hero-slide-2">
-<img src="savvy-mother-school.webp" alt="Savvy Mother International School website screenshot" loading="eager" decoding="async">
-</div>
-<div class="hero-slide hero-slide-3">
-<img src="result-portal.webp" alt="Result and marksheet verification portal screenshot" loading="eager" decoding="async">
-</div>
-<div class="hero-slide hero-slide-4">
-<img src="synapse-neet-app.webp" alt="Synapse NEET-UG medical aspirant preparation app screenshot" loading="eager" decoding="async">
-</div>
-<div class="hero-slide hero-slide-5">
-<img src="School-website.webp" alt="Savvy Mother Toddler School website screenshot" loading="eager" decoding="async">
-</div>
-<div class="hero-slide hero-slide-6">
-<img src="Tech-news-hub-site.webp" alt="Tech news hub website screenshot" loading="eager" decoding="async">
-</div>
-</div>
-<div class="hero-inner">
-<span class="hero-kicker"><i class="fas fa-shield-alt" style="color: #2563eb; margin-right: 6px;"></i> Enterprise Digital Engineering &amp; Institutional Systems</span>
-<h1>Engineering Mission-Critical Digital Infrastructure for <span class="hero-highlight">Modern Enterprises</span></h1>
-<p>Infranix Digital designs, architects, and scales enterprise-grade institutional ERP systems, high-concurrency examination portals, full-stack web applications, and intelligent AI automation workflows.</p>
-<div class="hero-actions">
-<a href="projects.html" class="btn" data-track="projects_click" data-track-label="Projects">Explore Live Deployments &rarr;</a>
-<a href="contact.html" class="secondary-btn">Schedule Discovery Call</a>
-</div>
-</div>
+<!-- ================= HERO SECTION ================= -->
+<section class="hero scroll-animate fade-up" id="home">
+  <div class="hero-container">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        <span>Enterprise Digital Engineering</span>
+      </div>
+      <h1>Engineering <span class="cyan-text">Digital Solutions</span> That Move Businesses Forward.</h1>
+      <p class="hero-description">
+        Infranix Digital architects and develops intelligent digital experiences, enterprise software, AI-powered solutions and automation systems that help organizations operate smarter and grow faster.
+      </p>
+      <div class="hero-actions">
+        <a href="#services" class="btn btn-primary" data-track="hero_explore">Explore Our Solutions <i class="fas fa-arrow-right" aria-hidden="true" style="margin-left:6px;"></i></a>
+        <a href="#contact" class="btn btn-secondary" data-track="hero_discuss">Discuss Your Project</a>
+      </div>
+      <div class="hero-trust-row">
+        <div class="hero-trust-item"><i class="fas fa-check-circle" aria-hidden="true"></i> Custom Architecture</div>
+        <div class="hero-trust-item"><i class="fas fa-check-circle" aria-hidden="true"></i> 99.98% System Uptime</div>
+        <div class="hero-trust-item"><i class="fas fa-check-circle" aria-hidden="true"></i> Direct SLA Support</div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="bento-console">
+        <div class="console-header">
+          <div class="console-status"><span class="pulse-dot"></span> ACTIVE PRODUCTION ARCHITECTURE</div>
+          <div class="console-metrics">LATENCY: &lt;120ms &bull; REGION: APAC</div>
+        </div>
+        <div class="console-preview">
+          <img src="edu-nova-erp.webp" alt="EDU-NOVA school management ERP software dashboard" loading="eager" decoding="async">
+          <div class="preview-overlay">
+            <span class="preview-tag">EDU-NOVA ERP Cockpit</span>
+            <span class="preview-client">Savvy Mother International</span>
+          </div>
+        </div>
+        <div class="console-subgrid">
+          <div class="console-card">
+            <div class="card-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></div>
+            <div class="card-info">
+              <strong>Enterprise ERP</strong>
+              <span>Multi-campus Sync</span>
+            </div>
+          </div>
+          <div class="console-card">
+            <div class="card-icon"><i class="fas fa-bolt" aria-hidden="true"></i></div>
+            <div class="card-info">
+              <strong>Sub-second Query</strong>
+              <span>Verification Engine</span>
+            </div>
+          </div>
+          <div class="console-card">
+            <div class="card-icon"><i class="fas fa-robot" aria-hidden="true"></i></div>
+            <div class="card-info">
+              <strong>AI Automation</strong>
+              <span>Workflow Pipelines</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
+<!-- ================= TRUST STRIP ================= -->
 <section class="trust-strip scroll-animate fade-up" aria-label="Infranix Digital enterprise trust signals">
-<div class="trust-strip-grid">
-<div class="trust-stat">
-<strong>28+ Production Builds</strong>
-<span>Institutional ERP systems, commercial portals, AI platforms, and native apps deployed live.</span>
-</div>
-<div class="trust-stat">
-<strong>99.98% System Uptime</strong>
-<span>Cloud-synchronized multi-campus architecture engineered with high availability and resilience.</span>
-</div>
-<div class="trust-stat">
-<strong>Enterprise Full-Stack</strong>
-<span>Next.js, React, Node.js, Python, PostgreSQL, Flutter, and secure cloud API integration.</span>
-</div>
-<div class="trust-stat">
-<strong>Institutional Delivery</strong>
-<span>Trusted by schools, academies, healthcare aspirants, and growing commercial enterprises.</span>
-</div>
-</div>
+  <div class="trust-strip-grid">
+    <div class="trust-stat">
+      <strong>28+ Production Builds</strong>
+      <span>Institutional ERP systems, commercial portals, AI platforms, and native apps deployed live.</span>
+    </div>
+    <div class="trust-stat">
+      <strong>99.98% System Uptime</strong>
+      <span>Cloud-synchronized multi-campus architecture engineered with high availability and resilience.</span>
+    </div>
+    <div class="trust-stat">
+      <strong>Modern Enterprise Stack</strong>
+      <span>Next.js, React, Node.js, Python, PostgreSQL, Flutter, and secure cloud API integration.</span>
+    </div>
+    <div class="trust-stat">
+      <strong>Institutional Delivery</strong>
+      <span>Trusted by schools, academies, healthcare aspirants, and growing commercial enterprises.</span>
+    </div>
+  </div>
 </section>
 
-<section class="featured-services scroll-animate fade-up">
-<h2>Our Services</h2>
-<div class="service-list">
-<div class="service-item scroll-animate fade-up">
-<img src="web.jpeg" alt="Responsive web development service illustration" loading="lazy" decoding="async">
-<h3>Web Development</h3>
-<p>Conversion-ready websites, landing pages, and Vercel launches.</p>
-<div class="service-fields" aria-label="Web development service fields">
-<span class="service-field">Business Website</span>
-<span class="service-field">School Website</span>
-<span class="service-field">Landing Page Design</span>
-<span class="service-field">Portfolio Website</span>
-<span class="service-field">SEO Website Setup</span>
-</div>
-<div class="service-actions">
-<a href="pricing.html" class="outline-btn" data-track="pricing_click" data-track-label="Pricing">Packages</a>
-</div>
-</div>
-<div class="service-item scroll-animate fade-up">
-<img src="AI.jpeg" alt="Artificial intelligence service illustration" loading="lazy" decoding="async">
-<h3>Artificial Intelligence</h3>
-<p>AI chatbots, content helpers, lead capture, and support automation.</p>
-<div class="service-fields" aria-label="Artificial intelligence service fields">
-<span class="service-field">AI Chatbot</span>
-<span class="service-field">Lead Capture Assistant</span>
-<span class="service-field">FAQ Automation</span>
-<span class="service-field">Content Workflow Tool</span>
-<span class="service-field">AI Form Assistant</span>
-</div>
-<div class="service-actions">
-<a href="pricing.html" class="outline-btn" data-track="pricing_click" data-track-label="Pricing">Packages</a>
-</div>
-</div>
-<div class="service-item scroll-animate fade-up">
-<img src="Robot.png" alt="Robotics and IoT service icon" loading="lazy" decoding="async">
-<h3>Robotics</h3>
-<p>Arduino, sensors, prototypes, and practical automation projects.</p>
-<div class="service-fields" aria-label="Robotics service fields">
-<span class="service-field">Arduino Project</span>
-<span class="service-field">IoT Automation</span>
-<span class="service-field">Sensor Monitoring</span>
-<span class="service-field">Smart Device Prototype</span>
-<span class="service-field">Project Documentation</span>
-</div>
-<div class="service-actions">
-<a href="pricing.html" class="outline-btn" data-track="pricing_click" data-track-label="Pricing">Packages</a>
-</div>
-</div>
-<div class="service-item scroll-animate fade-up">
-<img src="python.jpeg" alt="Python software development service illustration" loading="lazy" decoding="async">
-<h3>Python</h3>
-<p>PDF, QR, billing, reporting, and custom workflow software.</p>
-<div class="service-fields" aria-label="Python service fields">
-<span class="service-field">Custom Python Software</span>
-<span class="service-field">Billing System</span>
-<span class="service-field">PDF &amp; QR Generator</span>
-<span class="service-field">Attendance Tools</span>
-<span class="service-field">Data Report Automation</span>
-</div>
-<div class="service-actions">
-<a href="pricing.html" class="outline-btn" data-track="pricing_click" data-track-label="Pricing">Packages</a>
-</div>
-</div>
-</div>
+<!-- ================= 7 ACTUAL SERVICE CATEGORIES ================= -->
+<section class="featured-services scroll-animate fade-up" id="services">
+  <div class="section-heading">
+    <span class="section-kicker">Core Capabilities</span>
+    <h2>Enterprise Digital Services</h2>
+    <p>Comprehensive technology solutions custom-architected for institutions, growing commercial enterprises, and modern brands.</p>
+  </div>
+  
+  <div class="service-list">
+    <!-- 1. Web Development -->
+    <div class="service-item scroll-animate fade-up">
+      <div class="service-icon-box"><i class="fas fa-laptop-code" aria-hidden="true"></i></div>
+      <h3>Web Development</h3>
+      <p>High-performance responsive websites, conversion-engineered landing pages, Jamstack architectures, and SEO-optimized web portals.</p>
+      <div class="service-fields" aria-label="Web development service fields">
+        <span class="service-field">Business Websites</span>
+        <span class="service-field">Institutional Portals</span>
+        <span class="service-field">Landing Pages</span>
+        <span class="service-field">Headless CMS</span>
+        <span class="service-field">SEO Architecture</span>
+      </div>
+      <div class="service-actions">
+        <a href="pricing.html" class="outline-btn" data-track="pricing_click" data-track-label="Web Development">Explore Packages &rarr;</a>
+      </div>
+    </div>
+
+    <!-- 2. School & Institutional Management Software -->
+    <div class="service-item scroll-animate fade-up">
+      <div class="service-icon-box"><i class="fas fa-school" aria-hidden="true"></i></div>
+      <h3>School &amp; Institutional Management Software</h3>
+      <p>Complete multi-campus cloud ERP platforms managing student admissions, real-time attendance, fee receipts, marksheets, and staff records.</p>
+      <div class="service-fields" aria-label="School software service fields">
+        <span class="service-field">Admissions Portal</span>
+        <span class="service-field">Attendance Engine</span>
+        <span class="service-field">Marksheet Generation</span>
+        <span class="service-field">Fee Management</span>
+        <span class="service-field">Staff Records</span>
+      </div>
+      <div class="service-actions">
+        <a href="school-management-system.html" class="outline-btn">System Overview &rarr;</a>
+      </div>
+    </div>
+
+    <!-- 3. AI Solutions & Chatbots -->
+    <div class="service-item scroll-animate fade-up">
+      <div class="service-icon-box"><i class="fas fa-brain" aria-hidden="true"></i></div>
+      <h3>AI Solutions &amp; Chatbots</h3>
+      <p>Custom LLM conversational agents, automated 24/7 lead capture assistants, internal documentation Q&amp;A, and support workflow automation.</p>
+      <div class="service-fields" aria-label="AI solutions service fields">
+        <span class="service-field">Custom AI Chatbots</span>
+        <span class="service-field">Lead Qualification</span>
+        <span class="service-field">FAQ Automation</span>
+        <span class="service-field">Knowledge Base Q&amp;A</span>
+        <span class="service-field">Support Pipelines</span>
+      </div>
+      <div class="service-actions">
+        <a href="ai-chatbot.html" class="outline-btn">AI Solutions &rarr;</a>
+      </div>
+    </div>
+
+    <!-- 4. Python Software Development -->
+    <div class="service-item scroll-animate fade-up">
+      <div class="service-icon-box"><i class="fab fa-python" aria-hidden="true"></i></div>
+      <h3>Python Software Development</h3>
+      <p>Custom backend workflow software, high-volume automated PDF &amp; QR generators, marksheet verification engines, and custom billing scripts.</p>
+      <div class="service-fields" aria-label="Python software service fields">
+        <span class="service-field">PDF &amp; QR Generators</span>
+        <span class="service-field">Billing Software</span>
+        <span class="service-field">Marksheet Processing</span>
+        <span class="service-field">Data Pipelines</span>
+        <span class="service-field">Custom Automation</span>
+      </div>
+      <div class="service-actions">
+        <a href="python-software.html" class="outline-btn">Python Details &rarr;</a>
+      </div>
+    </div>
+
+    <!-- 5. Business Automation -->
+    <div class="service-item scroll-animate fade-up">
+      <div class="service-icon-box"><i class="fas fa-network-wired" aria-hidden="true"></i></div>
+      <h3>Business Automation</h3>
+      <p>End-to-end operational automation connecting web forms, WhatsApp/SMS notification pipelines, CRM synchronizations, and reporting workflows.</p>
+      <div class="service-fields" aria-label="Business automation service fields">
+        <span class="service-field">WhatsApp API Sync</span>
+        <span class="service-field">Lead Pipelines</span>
+        <span class="service-field">Form Workflows</span>
+        <span class="service-field">Multi-System Integration</span>
+        <span class="service-field">Automated Reporting</span>
+      </div>
+      <div class="service-actions">
+        <a href="#contact" class="outline-btn">Automate Workflows &rarr;</a>
+      </div>
+    </div>
+
+    <!-- 6. Robotics & IoT Solutions -->
+    <div class="service-item scroll-animate fade-up">
+      <div class="service-icon-box"><i class="fas fa-microchip" aria-hidden="true"></i></div>
+      <h3>Robotics &amp; IoT Solutions</h3>
+      <p>Embedded microcontroller engineering, Arduino &amp; ESP32 prototypes, sensor telemetry monitoring dashboards, and hardware-software integration.</p>
+      <div class="service-fields" aria-label="Robotics and IoT service fields">
+        <span class="service-field">Arduino Prototyping</span>
+        <span class="service-field">IoT Telemetry</span>
+        <span class="service-field">Sensor Dashboards</span>
+        <span class="service-field">Smart Automation</span>
+        <span class="service-field">Hardware Logic</span>
+      </div>
+      <div class="service-actions">
+        <a href="pricing.html" class="outline-btn" data-track="pricing_click" data-track-label="Robotics">Explore Packages &rarr;</a>
+      </div>
+    </div>
+
+    <!-- 7. Custom Software Development -->
+    <div class="service-item scroll-animate fade-up">
+      <div class="service-icon-box"><i class="fas fa-cubes" aria-hidden="true"></i></div>
+      <h3>Custom Software Development</h3>
+      <p>Bespoke internal business tools, tailored relational database architectures, secure RESTful APIs, and cloud-native application deployments.</p>
+      <div class="service-fields" aria-label="Custom software service fields">
+        <span class="service-field">Internal Business Tools</span>
+        <span class="service-field">Database Architecture</span>
+        <span class="service-field">RESTful Cloud APIs</span>
+        <span class="service-field">Client Handover</span>
+        <span class="service-field">Maintenance SLA</span>
+      </div>
+      <div class="service-actions">
+        <a href="#contact" class="outline-btn">Discuss Custom Build &rarr;</a>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="selling-section scroll-animate fade-up">
-<div class="section-heading">
-<h2>Popular Services to Order</h2>
-<p>Start with these ready-to-sell services, then customize features according to the client requirement.</p>
-</div>
-<div class="packages-grid">
-<div class="package-card">
-<span class="package-badge">Website</span>
-<h3>School Website</h3>
-<div class="package-price">Starting Rs. 2,999</div>
-<p class="package-meta">Admissions, notices, gallery, academics, contact, and live demo support.</p>
-<div class="package-actions">
-<a href="https://wa.me/916266324835" class="btn" data-order-service="School Website" data-track="order_click" data-track-label="School Website">Order</a>
-<a href="school-website.html" class="outline-btn">Details</a>
-</div>
-</div>
-<div class="package-card">
-<span class="package-badge">Software</span>
-<h3>School Management System</h3>
-<div class="package-price">Starting Rs. 7,999</div>
-<p class="package-meta">Students, attendance, marksheets, staff records, reports, and custom modules.</p>
-<div class="package-actions">
-<a href="https://wa.me/916266324835" class="btn" data-order-service="School Management System" data-track="order_click" data-track-label="School Management System">Order</a>
-<a href="school-management-system.html" class="outline-btn">Details</a>
-</div>
-</div>
-<div class="package-card">
-<span class="package-badge">Bundle</span>
-<h3>Website + ERP Software</h3>
-<div class="package-price">Starting Rs. 11,999</div>
-<p class="package-meta">Complete school website with ERP modules for attendance, records, reports, and inquiries.</p>
-<div class="package-actions">
-<a href="https://wa.me/916266324835" class="btn" data-order-service="Website + ERP Software" data-track="order_click" data-track-label="Website + ERP Software">Order</a>
-<a href="website-erp-software.html" class="outline-btn">Details</a>
-</div>
-</div>
-<div class="package-card">
-<span class="package-badge">AI</span>
-<h3>AI Chatbot</h3>
-<div class="package-price">Starting Rs. 3,999</div>
-<p class="package-meta">FAQ assistant, lead forms, support replies, and website integration guidance.</p>
-<div class="package-actions">
-<a href="https://wa.me/916266324835" class="btn" data-order-service="AI Chatbot" data-track="order_click" data-track-label="AI Chatbot">Order</a>
-<a href="ai-chatbot.html" class="outline-btn">Details</a>
-</div>
-</div>
-<div class="package-card">
-<span class="package-badge">Custom</span>
-<h3>Custom Python Software</h3>
-<div class="package-price">Starting Rs. 2,499</div>
-<p class="package-meta">Automation, chatbot, PDF, QR, marksheet, billing, and workflow tools.</p>
-<div class="package-actions">
-<a href="https://wa.me/916266324835" class="btn" data-order-service="Custom Python Software" data-track="order_click" data-track-label="Custom Python Software">Order</a>
-<a href="python-software.html" class="outline-btn">Details</a>
-</div>
-</div>
-<div class="package-card">
-<span class="package-badge">Growth</span>
-<h3>Lead-Gen Landing Page</h3>
-<div class="package-price">Starting Rs. 999</div>
-<p class="package-meta">One-page offer site with WhatsApp CTA, service highlights, and basic SEO.</p>
-<div class="package-actions">
-<a href="https://wa.me/916266324835" class="btn" data-order-service="Lead-Gen Landing Page" data-track="order_click" data-track-label="Lead-Gen Landing Page">Order</a>
-<a href="pricing.html" class="outline-btn" data-track="pricing_click" data-track-label="Pricing">Details</a>
-</div>
-</div>
-<div class="package-card">
-<span class="package-badge">Creator</span>
-<h3>Personal Brand Portfolio</h3>
-<div class="package-price">Starting Rs. 1,499</div>
-<p class="package-meta">Modern portfolio for creators, students, freelancers, and small agencies.</p>
-<div class="package-actions">
-<a href="https://wa.me/916266324835" class="btn" data-order-service="Personal Brand Portfolio" data-track="order_click" data-track-label="Personal Brand Portfolio">Order</a>
-<a href="projects.html" class="outline-btn">View Work</a>
-</div>
-</div>
-<div class="package-card">
-<span class="package-badge">Care</span>
-<h3>Website Maintenance</h3>
-<div class="package-price">Starting Rs. 499/mo</div>
-<p class="package-meta">Manage an existing website with content updates, small fixes, new sections, and support.</p>
-<div class="package-actions">
-<a href="https://wa.me/916266324835" class="btn" data-order-service="Website Maintenance Package" data-track="order_click" data-track-label="Website Maintenance Package">Order</a>
-<a href="website-maintenance.html" class="outline-btn">Details</a>
-</div>
-</div>
-</div>
+<!-- ================= PRODUCTS & PRICING ================= -->
+<section class="selling-section scroll-animate fade-up" id="pricing">
+  <div class="section-heading">
+    <span class="section-kicker">Transparent Commercial Packages</span>
+    <h2>Products &amp; Pricing Packages</h2>
+    <p>Retain verified commercial packages with clear starting prices, confirmed scopes, and direct engineer handover.</p>
+  </div>
+  
+  <div class="packages-grid">
+    <!-- 1. School Website -->
+    <div class="package-card">
+      <span class="package-badge">Web Platform</span>
+      <h3>School Website</h3>
+      <div class="package-price">Starting Rs. 2,999</div>
+      <p class="package-meta">Admissions portal, notice board, photo gallery, academic curriculum, contact inquiries, and responsive mobile optimization.</p>
+      <ul class="package-features">
+        <li><i class="fas fa-check" aria-hidden="true"></i> Responsive campus showcase</li>
+        <li><i class="fas fa-check" aria-hidden="true"></i> Online admission inquiry form</li>
+        <li><i class="fas fa-check" aria-hidden="true"></i> Notice &amp; events management</li>
+      </ul>
+      <div class="package-actions">
+        <a href="https://wa.me/916266324835" class="btn" data-order-service="School Website" data-track="order_click" data-track-label="School Website">Order via WhatsApp</a>
+        <a href="school-website.html" class="outline-btn">Details</a>
+      </div>
+    </div>
+
+    <!-- 2. School Management System -->
+    <div class="package-card">
+      <span class="package-badge">Institutional ERP</span>
+      <h3>School Management System</h3>
+      <div class="package-price">Starting Rs. 7,999</div>
+      <p class="package-meta">Student database, daily attendance tracking, automated marksheet engine, staff records, fee tracking, and administrative reports.</p>
+      <ul class="package-features">
+        <li><i class="fas fa-check" aria-hidden="true"></i> Multi-campus record synchronization</li>
+        <li><i class="fas fa-check" aria-hidden="true"></i> Automated report cards &amp; marksheets</li>
+        <li><i class="fas fa-check" aria-hidden="true"></i> Staff &amp; attendance management</li>
+      </ul>
+      <div class="package-actions">
+        <a href="https://wa.me/916266324835" class="btn" data-order-service="School Management System" data-track="order_click" data-track-label="School Management System">Order via WhatsApp</a>
+        <a href="school-management-system.html" class="outline-btn">Details</a>
+      </div>
+    </div>
+
+    <!-- 3. Website + ERP Software -->
+    <div class="package-card package-featured">
+      <span class="package-badge">Complete Solution</span>
+      <h3>Website + ERP Software</h3>
+      <div class="package-price">Starting Rs. 11,999</div>
+      <p class="package-meta">Complete public institutional website seamlessly integrated with the backend ERP system for attendance, fee records, and inquiries.</p>
+      <ul class="package-features">
+        <li><i class="fas fa-check" aria-hidden="true"></i> Unified public portal &amp; private ERP</li>
+        <li><i class="fas fa-check" aria-hidden="true"></i> Online fee inquiry &amp; payment records</li>
+        <li><i class="fas fa-check" aria-hidden="true"></i> Parent &amp; administrative cockpits</li>
+      </ul>
+      <div class="package-actions">
+        <a href="https://wa.me/916266324835" class="btn" data-order-service="Website + ERP Software" data-track="order_click" data-track-label="Website + ERP Software">Order via WhatsApp</a>
+        <a href="website-erp-software.html" class="outline-btn">Details</a>
+      </div>
+    </div>
+
+    <!-- 4. AI Chatbot -->
+    <div class="package-card">
+      <span class="package-badge">AI Automation</span>
+      <h3>AI Chatbot</h3>
+      <div class="package-price">Starting Rs. 3,999</div>
+      <p class="package-meta">24/7 intelligent FAQ assistant, automated lead qualification, support responses, and seamless website integration.</p>
+      <ul class="package-features">
+        <li><i class="fas fa-check" aria-hidden="true"></i> Custom conversational AI model</li>
+        <li><i class="fas fa-check" aria-hidden="true"></i> Instant lead capture to WhatsApp/email</li>
+        <li><i class="fas fa-check" aria-hidden="true"></i> Zero maintenance cloud deployment</li>
+      </ul>
+      <div class="package-actions">
+        <a href="https://wa.me/916266324835" class="btn" data-order-service="AI Chatbot" data-track="order_click" data-track-label="AI Chatbot">Order via WhatsApp</a>
+        <a href="ai-chatbot.html" class="outline-btn">Details</a>
+      </div>
+    </div>
+
+    <!-- 5. Custom Python Software -->
+    <div class="package-card">
+      <span class="package-badge">Custom Engineering</span>
+      <h3>Custom Python Software</h3>
+      <div class="package-price">Starting Rs. 2,499</div>
+      <p class="package-meta">Tailored automation scripts, PDF/QR generation engines, marksheet processors, billing tools, and data reporting utilities.</p>
+      <ul class="package-features">
+        <li><i class="fas fa-check" aria-hidden="true"></i> Batch PDF &amp; QR code generator</li>
+        <li><i class="fas fa-check" aria-hidden="true"></i> Custom business billing logic</li>
+        <li><i class="fas fa-check" aria-hidden="true"></i> Full source code &amp; documentation</li>
+      </ul>
+      <div class="package-actions">
+        <a href="https://wa.me/916266324835" class="btn" data-order-service="Custom Python Software" data-track="order_click" data-track-label="Custom Python Software">Order via WhatsApp</a>
+        <a href="python-software.html" class="outline-btn">Details</a>
+      </div>
+    </div>
+
+    <!-- 6. Lead-Gen Landing Page -->
+    <div class="package-card">
+      <span class="package-badge">Growth Marketing</span>
+      <h3>Lead-Gen Landing Page</h3>
+      <div class="package-price">Starting Rs. 999</div>
+      <p class="package-meta">High-converting single-page landing site with WhatsApp conversion CTA, service highlights, trust proof, and on-page SEO.</p>
+      <ul class="package-features">
+        <li><i class="fas fa-check" aria-hidden="true"></i> Conversion-focused typography &amp; layout</li>
+        <li><i class="fas fa-check" aria-hidden="true"></i> Direct WhatsApp inquiry buttons</li>
+        <li><i class="fas fa-check" aria-hidden="true"></i> Lightning-fast cloud hosting</li>
+      </ul>
+      <div class="package-actions">
+        <a href="https://wa.me/916266324835" class="btn" data-order-service="Lead-Gen Landing Page" data-track="order_click" data-track-label="Lead-Gen Landing Page">Order via WhatsApp</a>
+        <a href="pricing.html" class="outline-btn" data-track="pricing_click" data-track-label="Pricing">Details</a>
+      </div>
+    </div>
+
+    <!-- 7. Personal Brand Portfolio -->
+    <div class="package-card">
+      <span class="package-badge">Professional Brand</span>
+      <h3>Personal Brand Portfolio</h3>
+      <div class="package-price">Starting Rs. 1,499</div>
+      <p class="package-meta">Modern executive portfolio for consultants, creators, software engineers, and small agencies seeking premium digital presence.</p>
+      <ul class="package-features">
+        <li><i class="fas fa-check" aria-hidden="true"></i> Modern enterprise UI aesthetics</li>
+        <li><i class="fas fa-check" aria-hidden="true"></i> Case study &amp; project showcase</li>
+        <li><i class="fas fa-check" aria-hidden="true"></i> Interactive contact &amp; resume links</li>
+      </ul>
+      <div class="package-actions">
+        <a href="https://wa.me/916266324835" class="btn" data-order-service="Personal Brand Portfolio" data-track="order_click" data-track-label="Personal Brand Portfolio">Order via WhatsApp</a>
+        <a href="projects.html" class="outline-btn">View Work</a>
+      </div>
+    </div>
+
+    <!-- 8. Website Maintenance -->
+    <div class="package-card">
+      <span class="package-badge">Operational Support</span>
+      <h3>Website Maintenance</h3>
+      <div class="package-price">Starting Rs. 499/mo</div>
+      <p class="package-meta">Proactive management for existing websites: routine content updates, small bug fixes, security updates, and priority technical support.</p>
+      <ul class="package-features">
+        <li><i class="fas fa-check" aria-hidden="true"></i> Fast turnaround content updates</li>
+        <li><i class="fas fa-check" aria-hidden="true"></i> Uptime &amp; broken link monitoring</li>
+        <li><i class="fas fa-check" aria-hidden="true"></i> Dedicated WhatsApp technical support</li>
+      </ul>
+      <div class="package-actions">
+        <a href="https://wa.me/916266324835" class="btn" data-order-service="Website Maintenance Package" data-track="order_click" data-track-label="Website Maintenance Package">Order via WhatsApp</a>
+        <a href="website-maintenance.html" class="outline-btn">Details</a>
+      </div>
+    </div>
+  </div>
 </section>
 
+<!-- ================= PORTFOLIO & CASE STUDIES ================= -->
+<section class="testimonials scroll-animate fade-right" id="portfolio">
+  <div class="section-heading">
+    <span class="section-kicker">Verified Client Work</span>
+    <h2>Portfolio &amp; Case Studies</h2>
+    <p>Actual production architectures, institutional ERP systems, and web applications engineered and deployed live.</p>
+  </div>
+  
+  <div class="testimonial-list">
+    <!-- 1. EDU-NOVA School ERP -->
+    <div class="testimonial-item client-card">
+      <div class="case-study-media">
+        <img src="edu-nova-erp.webp" alt="EDU-NOVA school management ERP software dashboard screenshot" loading="lazy" decoding="async">
+        <span class="case-badge">Institutional ERP</span>
+      </div>
+      <div class="case-study-body">
+        <h3>EDU-NOVA School ERP</h3>
+        <div class="case-tech-stack">Next.js &bull; Cloud PostgreSQL &bull; RBAC &bull; High Availability</div>
+        <p>Institutional management cockpit for Savvy Mother International School: student admissions, fee tracking, staff records, real-time attendance, and multi-campus sync.</p>
+        <div class="case-actions">
+          <a href="https://savvy-school-management.vercel.app" class="outline-btn" target="_blank" rel="noopener">View Live ERP &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Savvy Mother International School -->
+    <div class="testimonial-item client-card">
+      <div class="case-study-media">
+        <img src="savvy-mother-school.webp" alt="Savvy Mother International School website screenshot" loading="lazy" decoding="async">
+        <span class="case-badge">School Web Portal</span>
+      </div>
+      <div class="case-study-body">
+        <h3>Savvy Mother International School</h3>
+        <div class="case-tech-stack">Responsive UI &bull; Admissions Engine &bull; Campus Showcase</div>
+        <p>Official institutional school website featuring responsive design, academic curriculum presentation, campus facilities gallery, events notices, and online admission inquiry handling.</p>
+        <div class="case-actions">
+          <a href="https://rk-creater-ctrl.github.io/SAVVY-MOTHER-SCHOOL/index.html" class="outline-btn" target="_blank" rel="noopener">View Live Website &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Result & Marksheet Portal -->
+    <div class="testimonial-item client-card">
+      <div class="case-study-media">
+        <img src="result-portal.webp" alt="Result and marksheet verification portal screenshot" loading="lazy" decoding="async">
+        <span class="case-badge">Verification Engine</span>
+      </div>
+      <div class="case-study-body">
+        <h3>Result &amp; Marksheet Verification Portal</h3>
+        <div class="case-tech-stack">Sub-second Query &bull; Marksheet Engine &bull; Admin Portal</div>
+        <p>Online examination verification platform with session filtering, enrollment lookup, instant marksheet rendering, and secure administrative record management.</p>
+        <div class="case-actions">
+          <a href="https://resulta-tau.vercel.app" class="outline-btn" target="_blank" rel="noopener">View Live Portal &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Synapse NEET-UG App -->
+    <div class="testimonial-item client-card">
+      <div class="case-study-media">
+        <img src="synapse-neet-app.webp" alt="Synapse NEET-UG medical aspirant preparation app screenshot" loading="lazy" decoding="async">
+        <span class="case-badge">Mobile Platform</span>
+      </div>
+      <div class="case-study-body">
+        <h3>Synapse NEET-UG Learning Platform</h3>
+        <div class="case-tech-stack">Mobile Architecture &bull; AI Target Engine &bull; Leaderboard</div>
+        <p>Dedicated medical aspirant mobile preparation app featuring AI smart study plan generation, doctor mentor daily targets (20Q + 20FC), and real-time aspirant leaderboards.</p>
+        <div class="case-actions">
+          <a href="projects.html" class="outline-btn">View App Details &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Toddler School -->
+    <div class="testimonial-item client-card">
+      <div class="case-study-media">
+        <img src="School-website.webp" alt="Savvy Mother Toddler School website screenshot" loading="lazy" decoding="async">
+        <span class="case-badge">Early Education</span>
+      </div>
+      <div class="case-study-body">
+        <h3>Savvy Mother Toddler School</h3>
+        <div class="case-tech-stack">Interactive Media &bull; Fast CDN &bull; Parent Inquiries</div>
+        <p>Responsive early learning school website designed for admissions, notices, campus galleries, academic programs, and streamlined parent communication.</p>
+        <div class="case-actions">
+          <a href="https://toddlerlearner.com" class="outline-btn" target="_blank" rel="noopener">View Live Website &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Face Recognition Attendance System -->
+    <div class="testimonial-item client-card">
+      <div class="case-study-media">
+        <img src="Tech-news-hub-site.webp" alt="Attendance system and verification architecture screenshot" loading="lazy" decoding="async">
+        <span class="case-badge">Biometric Automation</span>
+      </div>
+      <div class="case-study-body">
+        <h3>Savvy Mother Attendance System</h3>
+        <div class="case-tech-stack">Python &bull; Computer Vision &bull; Real-time Ledger</div>
+        <p>Engineered automated face recognition attendance system designed for schools to reduce morning record delays, prevent proxy entries, and sync logs directly to ERP records.</p>
+        <div class="case-actions">
+          <a href="projects.html" class="outline-btn">View Architecture &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY INFRANIX DIGITAL ================= -->
 <section class="why-choose-me scroll-animate fade-left">
-<h2>Why Choose Infranix Digital?</h2>
-<div class="business-proof-grid">
-<div class="business-proof-card">
-<strong>Clear scope before work</strong>
-<span>Every project starts with pages, features, timeline, revisions, and handover details confirmed in writing.</span>
-</div>
-<div class="business-proof-card">
-<strong>Built to sell or operate</strong>
-<span>Websites focus on inquiries and trust. Software focuses on reducing manual work and making records easier.</span>
-</div>
-<div class="business-proof-card">
-<strong>Maintenance after launch</strong>
-<span>Existing websites can be updated, fixed, redesigned, expanded, or managed through small support packages.</span>
-</div>
-</div>
+  <div class="why-container">
+    <div class="why-content">
+      <span class="section-kicker">Engineering Authority</span>
+      <h2>Why Organizations Partner With Infranix Digital</h2>
+      <p>
+        We bridge the gap between complex software engineering and reliable commercial execution. Whether architecting cloud-native institutional software or deploying intelligent automation, every line of code is written for security, high availability, and measurable business impact.
+      </p>
+      <div class="why-metrics-row">
+        <div class="why-metric">
+          <strong>100%</strong>
+          <span>Full Code Handover</span>
+        </div>
+        <div class="why-metric">
+          <strong>&lt; 4 Hours</strong>
+          <span>SLA Support Response</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="business-proof-grid">
+      <div class="business-proof-card">
+        <div class="proof-card-icon"><i class="fas fa-drafting-compass" aria-hidden="true"></i></div>
+        <strong>Custom-Engineered Architecture</strong>
+        <span>Zero bloated templates. Every institutional portal and software application is tailored strictly to your operational workflows.</span>
+      </div>
+      <div class="business-proof-card">
+        <div class="proof-card-icon"><i class="fas fa-layer-group" aria-hidden="true"></i></div>
+        <strong>Modern Technology Stack</strong>
+        <span>Built with Next.js, React, Node.js, Python, PostgreSQL, and secure RESTful cloud API architectures for high performance.</span>
+      </div>
+      <div class="business-proof-card">
+        <div class="proof-card-icon"><i class="fas fa-server" aria-hidden="true"></i></div>
+        <strong>Scalable Architecture</strong>
+        <span>Engineered to handle high concurrency, peak student admissions traffic, and multi-campus sync without degradation.</span>
+      </div>
+      <div class="business-proof-card">
+        <div class="proof-card-icon"><i class="fas fa-clock" aria-hidden="true"></i></div>
+        <strong>Practical Automation &amp; ROI</strong>
+        <span>Automate repetitive administrative tasks, billing calculations, and marksheet generation—saving hundreds of manual hours.</span>
+      </div>
+      <div class="business-proof-card">
+        <div class="proof-card-icon"><i class="fas fa-handshake" aria-hidden="true"></i></div>
+        <strong>Client-Focused Development</strong>
+        <span>Transparent milestone tracking, fixed scopes, regular progress demos, and comprehensive administrator training sessions.</span>
+      </div>
+      <div class="business-proof-card">
+        <div class="proof-card-icon"><i class="fas fa-headset" aria-hidden="true"></i></div>
+        <strong>Post-Launch SLA &amp; Support</strong>
+        <span>Long-term operational support, routine cloud backups, security patching, and proactive maintenance packages.</span>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="testimonials scroll-animate fade-right">
-<h2>Client Proof &amp; Recent Builds</h2>
-<div class="testimonial-list">
-<div class="testimonial-item client-card">
-<span class="package-badge">Cloud ERP</span>
-<h3>EDU-NOVA School ERP</h3>
-<p>Institutional management cockpit for Savvy Mother International School: admissions, fees, staff, attendance, CRM leads, and fleet transport.</p>
-<a href="https://savvy-school-management.vercel.app" class="outline-btn" target="_blank" rel="noopener">View Live ERP</a>
-</div>
-<div class="testimonial-item client-card">
-<span class="package-badge">School Website</span>
-<h3>Savvy Mother International School</h3>
-<p>Official institutional school website with responsive design, campus showcase, academics, facilities, events, and online admissions.</p>
-<a href="https://rk-creater-ctrl.github.io/SAVVY-MOTHER-SCHOOL/index.html" class="outline-btn" target="_blank" rel="noopener">View Live Website</a>
-</div>
-<div class="testimonial-item client-card">
-<span class="package-badge">Result Portal</span>
-<h3>Result &amp; Marksheet Portal</h3>
-<p>Online examination verification platform with session filtering, roll/enrollment number lookup, instant marksheets, and admin portal.</p>
-<a href="https://resulta-tau.vercel.app" class="outline-btn" target="_blank" rel="noopener">View Live Portal</a>
-</div>
-<div class="testimonial-item client-card">
-<span class="package-badge">Mobile App</span>
-<h3>Synapse NEET-UG App</h3>
-<p>Dedicated medical aspirant mobile preparation app with AI smart study plan, doctor mentor daily targets (20Q + 20FC), and live leaderboard.</p>
-<a href="projects.html" class="outline-btn">View App Details</a>
-</div>
-<div class="testimonial-item client-card">
-<span class="package-badge">Toddler School</span>
-<h3>Savvy Mother Toddler School</h3>
-<p>Created a responsive school website for admissions, notices, gallery, academics, and parent inquiries.</p>
-<a href="https://toddlerlearner.com" class="outline-btn" target="_blank" rel="noopener">View Website</a>
-</div>
-<div class="testimonial-item client-card">
-<span class="package-badge">Attendance System</span>
-<h3>Savvy Mother Attendance System</h3>
-<p>Built a face recognition attendance system to support faster student attendance and school record workflows.</p>
-<a href="projects.html" class="outline-btn">View Project</a>
-</div>
-</div>
+<!-- ================= CONTACT SECTION ================= -->
+<section class="contact-section scroll-animate fade-up" id="contact">
+  <div class="section-heading">
+    <span class="section-kicker">Start A Conversation</span>
+    <h2>Have a Vision? Let's Engineer It.</h2>
+    <p>Discuss your institutional software requirements, custom web platform, or automation project with our engineering team.</p>
+  </div>
+
+  <div class="contact-split-container">
+    <div class="contact-details-box">
+      <h3>Direct Engineering Channel</h3>
+      <p>Connect directly with our lead engineer to review requirements, project timelines, and technical architecture.</p>
+      
+      <div class="contact-info-list">
+        <div class="contact-info-item">
+          <i class="fas fa-phone-alt" aria-hidden="true"></i>
+          <div>
+            <strong>Direct Phone &amp; WhatsApp</strong>
+            <a href="tel:+916266324835">+91 6266324835</a>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+          <div>
+            <strong>Email Inquiries</strong>
+            <a href="mailto:ritikkushwaha3893@gmail.com">ritikkushwaha3893@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+          <div>
+            <strong>Engineering Office</strong>
+            <span>Rewa, Madhya Pradesh, India</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-guarantee">
+        <i class="fas fa-shield-alt" aria-hidden="true"></i>
+        <span>Guaranteed technical response within 4 business hours. Direct access to developer without sales intermediary.</span>
+      </div>
+
+      <div class="contact-direct-cta">
+        <a href="https://wa.me/916266324835" class="btn btn-whatsapp" target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i> Instant WhatsApp Discussion
+        </a>
+      </div>
+    </div>
+
+    <div class="contact-form-box">
+      <h3>Send Project Inquiry</h3>
+      <form data-whatsapp-form data-form-title="Enterprise Project Inquiry" data-track="form_submit">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your Name *</label>
+            <input type="text" id="name" name="name" data-label="Name" placeholder="e.g. Ritik Sharma" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone / WhatsApp *</label>
+            <input type="tel" id="phone" name="phone" data-label="Phone / WhatsApp" placeholder="+91 98765 43210" required>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Work Email</label>
+            <input type="email" id="email" name="email" data-label="Email" placeholder="e.g. ritik@organization.com">
+          </div>
+          <div class="form-group">
+            <label for="service">Service Required *</label>
+            <select id="service" name="service" data-label="Service" required>
+              <option value="">Select Service Category</option>
+              <option>Web Development</option>
+              <option>School &amp; Institutional Management Software</option>
+              <option>AI Solutions &amp; Chatbots</option>
+              <option>Python Software Development</option>
+              <option>Business Automation</option>
+              <option>Robotics &amp; IoT Solutions</option>
+              <option>Custom Software Development</option>
+              <option>Website Maintenance Package</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Project Requirements &amp; Scope *</label>
+          <textarea id="message" rows="4" name="message" data-label="Message" placeholder="Describe your project requirements, modules needed, target deadline, or reference websites..." required></textarea>
+        </div>
+
+        <button class="btn btn-primary btn-block" type="submit">Submit Project Inquiry <i class="fas fa-paper-plane" aria-hidden="true" style="margin-left:6px;"></i></button>
+        <p class="form-status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
 </section>
 
-<section class="cta scroll-animate fade-up">
-<h2>Ready to Scale Your Digital Infrastructure?</h2>
-<p>Partner with Infranix Digital to build high-performance institutional ERP systems, enterprise web platforms, or intelligent automation workflows.</p>
-<a href="contact.html" class="btn">Schedule an Architecture Session &rarr;</a>
-</section>
-
-<a href="https://wa.me/+916266324835" class="whatsapp-icon">
-<i class="fab fa-whatsapp"></i>
+<!-- Single clean floating WhatsApp CTA -->
+<a href="https://wa.me/+916266324835" class="whatsapp-icon" aria-label="Chat with Infranix Digital on WhatsApp">
+  <i class="fab fa-whatsapp" aria-hidden="true"></i>
 </a>
 
+<!-- ================= DARK NAVY CORPORATE FOOTER ================= -->
 <footer class="footer">
-    <div class="footer-container">
-
-        <!-- Brand Info -->
-        <div class="footer-about">
-            <img src="logo.png" alt="Infranix Digital logo" class="footer-logo" decoding="async">
-            <p>
-                Infranix Digital is a technology service studio led by
-                <strong>Ritik Kushwaha</strong>, delivering innovative solutions
-                in Web Development, AI, Robotics, and Python Programming.
-            </p>
-        </div>
-
-        <!-- Quick Links -->
-        <div class="footer-links">
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-
-        <!-- Contact Info -->
-        <div class="footer-contact">
-            <h3>Contact</h3>
-            <p><i class="fas fa-map-marker-alt"></i> Rewa, Madhya Pradesh, India</p>
-            <p><i class="fas fa-phone"></i> <a href="tel:+916266324835">+91 6266324835</a></p>
-            <p><i class="fas fa-envelope"></i> <a href="mailto:ritikkushwaha3893@gmail.com">ritikkushwaha3893@gmail.com</a></p>
-        </div>
-
-        <!-- Social Media -->
-        <div class="footer-social">
-            <h3>Connect</h3>
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/ritik-kushwaha-bb76a0355/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/rk-creater-ctrl" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
-                <a href="https://x.com/_CodeNexus" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.instagram.com/_.ritik_25" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-                <a href="https://wa.me/+916266324835" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
-            </div>
-        </div>
-
+  <div class="footer-container">
+    <!-- Brand Info -->
+    <div class="footer-about">
+      <img src="logo.png" alt="Infranix Digital logo" class="footer-logo" decoding="async">
+      <p>
+        Infranix Digital is an enterprise digital engineering and technology consulting practice led by
+        <strong>Ritik Kushwaha</strong>, delivering mission-critical web platforms, institutional ERP software, AI solutions, and automation systems.
+      </p>
     </div>
 
-    <!-- Bottom Bar -->
-    <div class="footer-policy-source"><a href="privacy-policy.html">Privacy Policy</a><span aria-hidden="true"> | </span><a href="terms-and-conditions.html">Terms &amp; Conditions</a><span aria-hidden="true"> | </span><a href="refund-cancellation-policy.html">Refund/Cancellation Policy</a></div><div class="footer-bottom">
-        &copy; <span id="year"></span> Infranix Digital. All Rights Reserved.<br>
-        Designed & Developed by <strong>Ritik Kushwaha</strong>
+    <!-- Quick Links -->
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
+
+    <!-- Contact Info -->
+    <div class="footer-contact">
+      <h3>Contact</h3>
+      <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Rewa, Madhya Pradesh, India</p>
+      <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+916266324835">+91 6266324835</a></p>
+      <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:ritikkushwaha3893@gmail.com">ritikkushwaha3893@gmail.com</a></p>
+    </div>
+
+    <!-- Connect / Social -->
+    <div class="footer-social">
+      <h3>Connect</h3>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/ritik-kushwaha-bb76a0355/" target="_blank" rel="noopener" aria-label="Infranix Digital on LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+        <a href="https://github.com/rk-creater-ctrl" target="_blank" rel="noopener" aria-label="Infranix Digital on GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+        <a href="https://x.com/_CodeNexus" target="_blank" rel="noopener" aria-label="Infranix Digital on X"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+        <a href="https://www.instagram.com/_.ritik_25" target="_blank" rel="noopener" aria-label="Infranix Digital on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+        <a href="https://wa.me/+916266324835" target="_blank" rel="noopener" aria-label="Chat with Infranix Digital on WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Policy Strip -->
+  <div class="footer-policy-source">
+    <a href="privacy-policy.html">Privacy Policy</a><span aria-hidden="true"> | </span>
+    <a href="terms-and-conditions.html">Terms &amp; Conditions</a><span aria-hidden="true"> | </span>
+    <a href="refund-cancellation-policy.html">Refund/Cancellation Policy</a><span aria-hidden="true"> | </span>
+    <a href="service-policy.html">Service Policy</a><span aria-hidden="true"> | </span>
+    <a href="disclaimer.html">Disclaimer</a>
+  </div>
+
+  <div class="footer-bottom">
+    &copy; <span id="year"></span> Infranix Digital. All Rights Reserved.<br>
+    Architected &amp; Developed by <strong>Ritik Kushwaha</strong>
+  </div>
 </footer>
 
 <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+  document.getElementById("year").textContent = new Date().getFullYear();
 </script>
-
-
-<script>
-/* Year */
-document.getElementById("year").innerText = new Date().getFullYear();
-
-/* Scroll Animation */
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-        }
-    });
-}, { threshold: 0.15 });
-
-document.querySelectorAll(".scroll-animate").forEach(el => observer.observe(el));
-</script>
-
 <script src="codenexus-modern.js"></script>
 </body>
-</html>
+</html>\n
